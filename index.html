@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kay's Originals — Discover Original Art</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ===== STICKY NAV ===== -->
+  <nav class="main-nav" id="mainNav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="images/KaysOrigLogo.png" alt="Kay's Originals" class="nav-logo">
+        <span class="nav-slogan">Discover Original Art</span>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li class="has-dropdown">
+          <a href="#" class="nav-link dropdown-toggle">Artwork</a>
+          <ul class="dropdown">
+            <li><a href="#">Paintings</a></li>
+            <li><a href="#">Sculptures</a></li>
+            <li><a href="#">Sketches</a></li>
+          </ul>
+        </li>
+        <li><a href="#" class="nav-link">Artists</a></li>
+        <li><a href="#" class="nav-link">Apply as an Artist</a></li>
+        <li><a href="#" class="nav-link">About Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO CAROUSEL ===== -->
+  <section class="hero-carousel" id="heroCarousel" aria-label="Featured artwork slideshow">
+    <div class="carousel-track">
+      <div class="carousel-slide active" style="background: linear-gradient(135deg, #1a8fc4 0%, #2a9d8f 100%);">
+        <div class="slide-content">
+          <span class="slide-label">Painting</span>
+          <h2>Echoes of the Coast</h2>
+          <p>An oil painting capturing the raw energy of breaking waves at dusk.</p>
+        </div>
+      </div>
+      <div class="carousel-slide" style="background: linear-gradient(135deg, #e05252 0%, #e8b84b 100%);">
+        <div class="slide-content">
+          <span class="slide-label">Sculpture</span>
+          <h2>Momentum in Bronze</h2>
+          <p>A kinetic sculpture exploring motion and stillness through curved metal forms.</p>
+        </div>
+      </div>
+      <div class="carousel-slide" style="background: linear-gradient(135deg, #2a9d8f 0%, #1a8fc4 100%);">
+        <div class="slide-content">
+          <span class="slide-label">Sketch</span>
+          <h2>Study of Light No. 7</h2>
+          <p>Charcoal on paper — a meditation on shadow and negative space.</p>
+        </div>
+      </div>
+      <div class="carousel-slide" style="background: linear-gradient(135deg, #e8b84b 0%, #e05252 100%);">
+        <div class="slide-content">
+          <span class="slide-label">Painting</span>
+          <h2>Garden After Rain</h2>
+          <p>Watercolor blooms capture the quiet brilliance of a sunlit garden.</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-btn carousel-prev" aria-label="Previous slide">&#10094;</button>
+    <button class="carousel-btn carousel-next" aria-label="Next slide">&#10095;</button>
+
+    <div class="carousel-dots" id="carouselDots">
+      <button class="dot active" aria-label="Go to slide 1"></button>
+      <button class="dot" aria-label="Go to slide 2"></button>
+      <button class="dot" aria-label="Go to slide 3"></button>
+      <button class="dot" aria-label="Go to slide 4"></button>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED ARTWORK GRID ===== -->
+  <section class="featured-artwork">
+    <div class="section-inner">
+      <h2 class="section-heading">Featured Artwork</h2>
+      <div class="artwork-grid">
+
+        <article class="artwork-card">
+          <div class="card-frame">
+            <div class="card-image placeholder-img" style="background: linear-gradient(160deg, #1a8fc4, #2a9d8f);">
+              <span class="placeholder-text">Painting</span>
+            </div>
+          </div>
+          <div class="card-info">
+            <span class="media-tag tag-painting">Painting</span>
+            <h3 class="card-title">Cerulean Drift</h3>
+            <p class="card-artist">by Mariana Solís</p>
+          </div>
+        </article>
+
+        <article class="artwork-card">
+          <div class="card-frame">
+            <div class="card-image placeholder-img" style="background: linear-gradient(160deg, #e05252, #e8b84b);">
+              <span class="placeholder-text">Sculpture</span>
+            </div>
+          </div>
+          <div class="card-info">
+            <span class="media-tag tag-sculpture">Sculpture</span>
+            <h3 class="card-title">Fracture &amp; Form</h3>
+            <p class="card-artist">by David Chen</p>
+          </div>
+        </article>
+
+        <article class="artwork-card">
+          <div class="card-frame">
+            <div class="card-image placeholder-img" style="background: linear-gradient(160deg, #2b2b2b, #555);">
+              <span class="placeholder-text">Sketch</span>
+            </div>
+          </div>
+          <div class="card-info">
+            <span class="media-tag tag-sketch">Sketch</span>
+            <h3 class="card-title">Contour No. 12</h3>
+            <p class="card-artist">by Aisha Patel</p>
+          </div>
+        </article>
+
+        <article class="artwork-card">
+          <div class="card-frame">
+            <div class="card-image placeholder-img" style="background: linear-gradient(160deg, #e8b84b, #2a9d8f);">
+              <span class="placeholder-text">Painting</span>
+            </div>
+          </div>
+          <div class="card-info">
+            <span class="media-tag tag-painting">Painting</span>
+            <h3 class="card-title">Harvest Gold</h3>
+            <p class="card-artist">by Tomás Rivera</p>
+          </div>
+        </article>
+
+        <article class="artwork-card">
+          <div class="card-frame">
+            <div class="card-image placeholder-img" style="background: linear-gradient(160deg, #2a9d8f, #1a8fc4);">
+              <span class="placeholder-text">Sculpture</span>
+            </div>
+          </div>
+          <div class="card-info">
+            <span class="media-tag tag-sculpture">Sculpture</span>
+            <h3 class="card-title">Tangled Axis</h3>
+            <p class="card-artist">by Lena Johansson</p>
+          </div>
+        </article>
+
+        <article class="artwork-card">
+          <div class="card-frame">
+            <div class="card-image placeholder-img" style="background: linear-gradient(160deg, #e05252, #2b2b2b);">
+              <span class="placeholder-text">Sketch</span>
+            </div>
+          </div>
+          <div class="card-info">
+            <span class="media-tag tag-sketch">Sketch</span>
+            <h3 class="card-title">Figure in Repose</h3>
+            <p class="card-artist">by Marcus Webb</p>
+          </div>
+        </article>
+
+      </div>
+      <div class="section-cta">
+        <a href="#" class="btn btn-primary">See More Art</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BROWSE BY CATEGORY ===== -->
+  <section class="browse-category">
+    <div class="section-inner">
+      <h2 class="section-heading">Browse by Category</h2>
+      <div class="category-grid">
+
+        <a href="#" class="category-card" style="background: linear-gradient(135deg, #1a8fc4 30%, #2a9d8f);">
+          <div class="category-overlay"></div>
+          <h3>Paintings</h3>
+          <p>Oils, watercolors, acrylics &amp; mixed media on canvas</p>
+        </a>
+
+        <a href="#" class="category-card" style="background: linear-gradient(135deg, #e05252 30%, #e8b84b);">
+          <div class="category-overlay"></div>
+          <h3>Sculptures</h3>
+          <p>Bronze, stone, clay &amp; found-object assemblages</p>
+        </a>
+
+        <a href="#" class="category-card" style="background: linear-gradient(135deg, #2b2b2b 30%, #555);">
+          <div class="category-overlay"></div>
+          <h3>Sketches</h3>
+          <p>Charcoal, graphite, ink &amp; pastel studies on paper</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ARTIST SPOTLIGHT ===== -->
+  <section class="artist-spotlight">
+    <div class="section-inner">
+      <h2 class="section-heading">Artist Spotlight</h2>
+      <div class="artist-grid">
+
+        <div class="artist-card">
+          <div class="artist-photo placeholder-img" style="background: linear-gradient(160deg, #1a8fc4, #e8b84b);">
+            <span class="placeholder-text">Photo</span>
+          </div>
+          <h3>Mariana Solís</h3>
+          <p>Abstract painter working with bold color and layered texture. Based in Austin, TX.</p>
+        </div>
+
+        <div class="artist-card">
+          <div class="artist-photo placeholder-img" style="background: linear-gradient(160deg, #e05252, #2a9d8f);">
+            <span class="placeholder-text">Photo</span>
+          </div>
+          <h3>David Chen</h3>
+          <p>Sculptor exploring industrial materials and organic forms. Exhibits nationally.</p>
+        </div>
+
+        <div class="artist-card">
+          <div class="artist-photo placeholder-img" style="background: linear-gradient(160deg, #2a9d8f, #e8b84b);">
+            <span class="placeholder-text">Photo</span>
+          </div>
+          <h3>Aisha Patel</h3>
+          <p>Illustrator and sketch artist known for expressive charcoal figure studies.</p>
+        </div>
+
+      </div>
+      <div class="section-cta">
+        <a href="#" class="btn btn-secondary">View All Artists</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/KaysOrigLogo.png" alt="Kay's Originals" class="footer-logo">
+        <p class="footer-slogan">Discover Original Art</p>
+      </div>
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#">Paintings</a></li>
+          <li><a href="#">Sculptures</a></li>
+          <li><a href="#">Sketches</a></li>
+          <li><a href="#">Artists</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Apply as an Artist</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Get in Touch</h4>
+        <p>info@kaysoriginals.com</p>
+        <p>(555) 012-3456</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Kay's Originals. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
