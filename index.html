@@ -11,205 +11,50 @@
 </head>
 <body>
 
-  <!-- ===== STICKY NAV ===== -->
+  <!-- ===== COLOR BAR & NAV ===== -->
+  <div class="color-bar"></div>
   <nav class="main-nav" id="mainNav">
     <div class="nav-inner">
       <a href="index.html" class="nav-brand">
         <img src="images/KaysOrigLogo.png" alt="Kay's Originals" class="nav-logo">
         <span class="nav-slogan">Discover Original Art</span>
       </a>
-
       <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-
       <ul class="nav-links" id="navLinks">
-        <li class="has-dropdown">
-          <a href="#" class="nav-link dropdown-toggle">Artwork</a>
-          <ul class="dropdown">
-            <li><a href="#">Paintings</a></li>
-            <li><a href="#">Sculptures</a></li>
-            <li><a href="#">Sketches</a></li>
-          </ul>
-        </li>
-        <li><a href="#" class="nav-link">Artists</a></li>
-        <li><a href="#" class="nav-link">Apply as an Artist</a></li>
-        <li><a href="#" class="nav-link">About Us</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="artists.html" class="nav-link">Artists</a></li>
+        <li><a href="consignment.html" class="nav-link">Consignment</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- ===== HERO CAROUSEL ===== -->
-  <section class="hero-carousel" id="heroCarousel" aria-label="Featured artwork slideshow">
-    <div class="carousel-track">
-
-      <div class="carousel-slide active">
-        <img src="https://picsum.photos/seed/coastal-oil/1400/700" alt="Echoes of the Coast — oil painting of breaking waves" class="slide-img">
-        <div class="slide-overlay"></div>
-        <div class="slide-content">
-          <span class="slide-label">Painting</span>
-          <h2>Echoes of the Coast</h2>
-          <p>An oil painting capturing the raw energy of breaking waves at dusk, where the ocean meets the fading sky.</p>
-          <a href="#" class="btn btn-hero">View Painting</a>
-        </div>
+  <!-- ===== HERO ===== -->
+  <section class="page-hero home-hero">
+    <div class="section-inner hero-center">
+      <img src="images/KaysOrigLogo.png" alt="Kay's Originals" class="hero-logo-img">
+      <h1>Original Art, Personally Curated</h1>
+      <p class="hero-subtitle">Discover bold, original artwork from visionary artists — all in one place.</p>
+      <div class="hero-actions">
+        <a href="gallery.html" class="btn btn-primary">Browse Artwork</a>
+        <a href="consignment.html" class="btn btn-secondary">For Artists</a>
       </div>
-
-      <div class="carousel-slide">
-        <img src="https://picsum.photos/seed/bronze-sculpt/1400/700" alt="Momentum in Bronze — kinetic sculpture" class="slide-img">
-        <div class="slide-overlay"></div>
-        <div class="slide-content">
-          <span class="slide-label">Sculpture</span>
-          <h2>Momentum in Bronze</h2>
-          <p>A kinetic sculpture exploring motion and stillness through curved metal forms that catch the light.</p>
-          <a href="#" class="btn btn-hero">View Sculpture</a>
-        </div>
-      </div>
-
-      <div class="carousel-slide">
-        <img src="https://picsum.photos/seed/charcoal-study/1400/700" alt="Study of Light No. 7 — charcoal sketch" class="slide-img">
-        <div class="slide-overlay"></div>
-        <div class="slide-content">
-          <span class="slide-label">Sketch</span>
-          <h2>Study of Light No. 7</h2>
-          <p>Charcoal on paper — a meditation on shadow and negative space, rendered in sweeping gestural strokes.</p>
-          <a href="#" class="btn btn-hero">View Sketch</a>
-        </div>
-      </div>
-
-      <div class="carousel-slide">
-        <img src="https://picsum.photos/seed/garden-watercolor/1400/700" alt="Garden After Rain — watercolor painting" class="slide-img">
-        <div class="slide-overlay"></div>
-        <div class="slide-content">
-          <span class="slide-label">Painting</span>
-          <h2>Garden After Rain</h2>
-          <p>Watercolor blooms capture the quiet brilliance of a sunlit garden, still glistening with morning dew.</p>
-          <a href="#" class="btn btn-hero">View Painting</a>
-        </div>
-      </div>
-
-    </div>
-
-    <button class="carousel-btn carousel-prev" aria-label="Previous slide">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
-    </button>
-    <button class="carousel-btn carousel-next" aria-label="Next slide">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-    </button>
-
-    <div class="carousel-dots" id="carouselDots">
-      <button class="dot active" aria-label="Go to slide 1"></button>
-      <button class="dot" aria-label="Go to slide 2"></button>
-      <button class="dot" aria-label="Go to slide 3"></button>
-      <button class="dot" aria-label="Go to slide 4"></button>
-    </div>
-
-    <div class="carousel-counter">
-      <span id="slideNumber">01</span> / 04
     </div>
   </section>
 
-  <!-- ===== FEATURED ARTWORK GRID ===== -->
+  <!-- ===== FEATURED ARTWORK ===== -->
   <section class="featured-artwork">
     <div class="section-inner">
-      <div class="section-header reveal">
+      <div class="section-header">
         <h2 class="section-heading">Featured Artwork</h2>
-        <p class="section-subhead">A curated selection from our gallery's most compelling recent acquisitions.</p>
+        <p class="section-subhead">A curated selection from our gallery's most compelling pieces.</p>
       </div>
-      <div class="artwork-grid">
-
-        <article class="artwork-card reveal">
-          <div class="card-frame">
-            <img src="https://picsum.photos/seed/abstract-blue/600/750" alt="Cerulean Drift by Pablo Picasso" class="card-image">
-            <div class="card-overlay">
-              <span class="overlay-text">View Details</span>
-            </div>
-          </div>
-          <div class="card-info">
-            <span class="media-tag tag-painting">Painting</span>
-            <h3 class="card-title">Les Demoiselles d'Avignon</h3>
-            <p class="card-artist">Pablo Picasso</p>
-            <p class="card-year">1907</p>
-          </div>
-        </article>
-
-        <article class="artwork-card reveal">
-          <div class="card-frame">
-            <img src="https://picsum.photos/seed/waterlilies/600/750" alt="Water Lilies by Claude Monet" class="card-image">
-            <div class="card-overlay">
-              <span class="overlay-text">View Details</span>
-            </div>
-          </div>
-          <div class="card-info">
-            <span class="media-tag tag-painting">Painting</span>
-            <h3 class="card-title">Water Lilies</h3>
-            <p class="card-artist">Claude Monet</p>
-            <p class="card-year">1906</p>
-          </div>
-        </article>
-
-        <article class="artwork-card reveal">
-          <div class="card-frame">
-            <img src="https://picsum.photos/seed/thinker-sculpt/600/750" alt="The Thinker by Auguste Rodin" class="card-image">
-            <div class="card-overlay">
-              <span class="overlay-text">View Details</span>
-            </div>
-          </div>
-          <div class="card-info">
-            <span class="media-tag tag-sculpture">Sculpture</span>
-            <h3 class="card-title">The Thinker</h3>
-            <p class="card-artist">Auguste Rodin</p>
-            <p class="card-year">1904</p>
-          </div>
-        </article>
-
-        <article class="artwork-card reveal">
-          <div class="card-frame">
-            <img src="https://picsum.photos/seed/frida-portrait/600/750" alt="Self-Portrait by Frida Kahlo" class="card-image">
-            <div class="card-overlay">
-              <span class="overlay-text">View Details</span>
-            </div>
-          </div>
-          <div class="card-info">
-            <span class="media-tag tag-painting">Painting</span>
-            <h3 class="card-title">Self-Portrait with Thorn Necklace</h3>
-            <p class="card-artist">Frida Kahlo</p>
-            <p class="card-year">1940</p>
-          </div>
-        </article>
-
-        <article class="artwork-card reveal">
-          <div class="card-frame">
-            <img src="https://picsum.photos/seed/davinci-sketch/600/750" alt="Vitruvian Man by Leonardo da Vinci" class="card-image">
-            <div class="card-overlay">
-              <span class="overlay-text">View Details</span>
-            </div>
-          </div>
-          <div class="card-info">
-            <span class="media-tag tag-sketch">Sketch</span>
-            <h3 class="card-title">Vitruvian Man</h3>
-            <p class="card-artist">Leonardo da Vinci</p>
-            <p class="card-year">c. 1490</p>
-          </div>
-        </article>
-
-        <article class="artwork-card reveal">
-          <div class="card-frame">
-            <img src="https://picsum.photos/seed/starry-night/600/750" alt="The Starry Night by Vincent van Gogh" class="card-image">
-            <div class="card-overlay">
-              <span class="overlay-text">View Details</span>
-            </div>
-          </div>
-          <div class="card-info">
-            <span class="media-tag tag-painting">Painting</span>
-            <h3 class="card-title">The Starry Night</h3>
-            <p class="card-artist">Vincent van Gogh</p>
-            <p class="card-year">1889</p>
-          </div>
-        </article>
-
-      </div>
-      <div class="section-cta reveal">
-        <a href="#" class="btn btn-primary">See More Art</a>
+      <div id="featuredGrid" class="artwork-grid"></div>
+      <div class="section-cta">
+        <a href="gallery.html" class="btn btn-primary">See All Artwork</a>
       </div>
     </div>
   </section>
@@ -217,37 +62,34 @@
   <!-- ===== BROWSE BY CATEGORY ===== -->
   <section class="browse-category">
     <div class="section-inner">
-      <div class="section-header reveal">
+      <div class="section-header">
         <h2 class="section-heading">Browse by Category</h2>
         <p class="section-subhead">Explore our collection across three media.</p>
       </div>
       <div class="category-grid">
 
-        <a href="#" class="category-card reveal">
-          <img src="https://picsum.photos/seed/oil-painting-gallery/800/500" alt="Paintings category" class="category-img">
+        <a href="gallery.html?category=painting" class="category-card">
+          <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=500&fit=crop" alt="Paintings category" class="category-img">
           <div class="category-overlay"></div>
           <div class="category-content">
-            <span class="category-count">42 pieces</span>
             <h3>Paintings</h3>
             <p>Oils, watercolors, acrylics &amp; mixed media on canvas</p>
           </div>
         </a>
 
-        <a href="#" class="category-card reveal">
-          <img src="https://picsum.photos/seed/marble-sculpture/800/500" alt="Sculptures category" class="category-img">
+        <a href="gallery.html?category=sculpture" class="category-card">
+          <img src="https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=800&h=500&fit=crop" alt="Sculptures category" class="category-img">
           <div class="category-overlay"></div>
           <div class="category-content">
-            <span class="category-count">18 pieces</span>
             <h3>Sculptures</h3>
             <p>Bronze, marble, clay &amp; found-object assemblages</p>
           </div>
         </a>
 
-        <a href="#" class="category-card reveal">
-          <img src="https://picsum.photos/seed/pencil-sketch-art/800/500" alt="Sketches category" class="category-img">
+        <a href="gallery.html?category=sketch" class="category-card">
+          <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&h=500&fit=crop" alt="Sketches category" class="category-img">
           <div class="category-overlay"></div>
           <div class="category-content">
-            <span class="category-count">27 pieces</span>
             <h3>Sketches</h3>
             <p>Charcoal, graphite, ink &amp; pastel studies on paper</p>
           </div>
@@ -260,52 +102,24 @@
   <!-- ===== ARTIST SPOTLIGHT ===== -->
   <section class="artist-spotlight">
     <div class="section-inner">
-      <div class="section-header reveal">
+      <div class="section-header">
         <h2 class="section-heading">Artist Spotlight</h2>
         <p class="section-subhead">Meet the visionaries behind the work.</p>
       </div>
-      <div class="artist-grid">
-
-        <div class="artist-card reveal">
-          <div class="artist-photo-wrap">
-            <img src="https://picsum.photos/seed/picasso-portrait/400/400" alt="Pablo Picasso" class="artist-photo">
-          </div>
-          <div class="artist-info">
-            <h3>Pablo Picasso</h3>
-            <span class="artist-media">Painter &amp; Sculptor</span>
-            <p>Co-founder of Cubism and one of the most influential artists of the 20th century, known for constantly reinventing his style.</p>
-            <a href="#" class="artist-link">View Portfolio &rarr;</a>
-          </div>
-        </div>
-
-        <div class="artist-card reveal">
-          <div class="artist-photo-wrap">
-            <img src="https://picsum.photos/seed/frida-artist/400/400" alt="Frida Kahlo" class="artist-photo">
-          </div>
-          <div class="artist-info">
-            <h3>Frida Kahlo</h3>
-            <span class="artist-media">Painter</span>
-            <p>Mexican artist celebrated for her vivid self-portraits and works inspired by the nature and culture of Mexico, blending realism with fantasy.</p>
-            <a href="#" class="artist-link">View Portfolio &rarr;</a>
-          </div>
-        </div>
-
-        <div class="artist-card reveal">
-          <div class="artist-photo-wrap">
-            <img src="https://picsum.photos/seed/monet-artist/400/400" alt="Claude Monet" class="artist-photo">
-          </div>
-          <div class="artist-info">
-            <h3>Claude Monet</h3>
-            <span class="artist-media">Painter</span>
-            <p>Founder of French Impressionism, devoted to capturing light and atmosphere through plein air painting and bold, broken brushwork.</p>
-            <a href="#" class="artist-link">View Portfolio &rarr;</a>
-          </div>
-        </div>
-
+      <div id="artistGrid" class="artist-grid"></div>
+      <div class="section-cta">
+        <a href="artists.html" class="btn btn-secondary">View All Artists</a>
       </div>
-      <div class="section-cta reveal">
-        <a href="#" class="btn btn-secondary">View All Artists</a>
-      </div>
+    </div>
+  </section>
+
+  <!-- ===== KAY'S QUOTE ===== -->
+  <section class="quote-section">
+    <div class="section-inner">
+      <blockquote class="founder-quote">
+        <p>"Every piece in our gallery tells a story. Our job is to help it find the right home."</p>
+        <cite>— Kay Green, Founder</cite>
+      </blockquote>
     </div>
   </section>
 
@@ -315,24 +129,24 @@
       <div class="footer-brand">
         <img src="images/KaysOrigLogo.png" alt="Kay's Originals" class="footer-logo">
         <p class="footer-slogan">Discover Original Art</p>
-        <p class="footer-tagline">A curated gallery celebrating bold, original artwork from visionary artists around the world.</p>
+        <p class="footer-tagline">A curated gallery celebrating bold, original artwork from visionary artists.</p>
       </div>
       <div class="footer-links">
         <h4>Explore</h4>
         <ul>
-          <li><a href="#">Paintings</a></li>
-          <li><a href="#">Sculptures</a></li>
-          <li><a href="#">Sketches</a></li>
-          <li><a href="#">All Artists</a></li>
+          <li><a href="gallery.html?category=painting">Paintings</a></li>
+          <li><a href="gallery.html?category=sculpture">Sculptures</a></li>
+          <li><a href="gallery.html?category=sketch">Sketches</a></li>
+          <li><a href="gallery.html">All Artwork</a></li>
         </ul>
       </div>
       <div class="footer-links">
         <h4>Company</h4>
         <ul>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Apply as an Artist</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">FAQ</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="consignment.html">Consignment</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="faq.html">FAQ</a></li>
         </ul>
       </div>
       <div class="footer-contact">
@@ -347,6 +161,7 @@
     </div>
   </footer>
 
+  <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
