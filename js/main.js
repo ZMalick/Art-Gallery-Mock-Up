@@ -55,6 +55,18 @@
   /* ========================================
      PAGE: Homepage
      ======================================== */
+
+  /* ---- Hero Slideshow ---- */
+  var heroSlides = document.querySelectorAll('.hero-slide');
+  if (heroSlides.length > 1) {
+    var currentSlide = 0;
+    setInterval(function () {
+      heroSlides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % heroSlides.length;
+      heroSlides[currentSlide].classList.add('active');
+    }, 5000);
+  }
+
   var featuredGrid = document.getElementById('featuredGrid');
   if (featuredGrid) {
     var featured = KaysData.artworks.slice(0, 6);
