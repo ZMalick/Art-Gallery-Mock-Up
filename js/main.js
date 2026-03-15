@@ -20,7 +20,7 @@
     var artist = KaysData.getArtist(art.artistId);
     var artistName = artist ? artist.name : '';
     return '<article class="artwork-card">' +
-      '<a href="artwork.html?id=' + art.id + '" class="card-link">' +
+      '<a href="' + (window.PAGE_BASE || '') + 'artwork.html?id=' + art.id + '" class="card-link">' +
         '<div class="card-frame">' +
           '<img src="' + art.image + '" alt="' + art.title + '" class="card-image" loading="lazy">' +
           '<div class="card-overlay"><span class="overlay-text">View Details</span></div>' +
@@ -38,7 +38,7 @@
   /* ---- Render an artist card (reused everywhere) ---- */
   function renderArtistCard(artist) {
     return '<div class="artist-card">' +
-      '<a href="artist.html?id=' + artist.id + '" class="artist-card-link">' +
+      '<a href="' + (window.PAGE_BASE || '') + 'artist.html?id=' + artist.id + '" class="artist-card-link">' +
         '<div class="artist-photo-wrap">' +
           '<img src="' + artist.photo + '" alt="' + artist.name + '" class="artist-photo" loading="lazy">' +
         '</div>' +
@@ -174,20 +174,20 @@
               '<p><strong>Dimensions:</strong> ' + art.dimensions + '</p>' +
               '<p><strong>Year:</strong> ' + art.year + '</p>' +
             '</div>' +
-            (artist ? '<a href="artist.html?id=' + artist.id + '" class="btn btn-primary" style="margin-top:1.5rem;">View Artist Profile</a>' : '') +
+            (artist ? '<a href="' + (window.PAGE_BASE || '') + 'artist.html?id=' + artist.id + '" class="btn btn-primary" style="margin-top:1.5rem;">View Artist Profile</a>' : '') +
           '</div>' +
         '</div>' +
         (artist ?
           '<div class="detail-about-artist">' +
             '<h3>About the Artist</h3>' +
-            '<p>' + artist.shortBio + ' <a href="artist.html?id=' + artist.id + '">View full profile &rarr;</a></p>' +
+            '<p>' + artist.shortBio + ' <a href="' + (window.PAGE_BASE || '') + 'artist.html?id=' + artist.id + '">View full profile &rarr;</a></p>' +
           '</div>' : '');
     } else {
       artworkDetail.innerHTML =
         '<div class="not-found">' +
           '<h2>Artwork Not Found</h2>' +
           '<p>The artwork you are looking for does not exist.</p>' +
-          '<a href="gallery.html" class="btn btn-primary">Back to Gallery</a>' +
+          '<a href="' + (window.PAGE_BASE || '') + 'gallery.html" class="btn btn-primary">Back to Gallery</a>' +
         '</div>';
     }
   }
@@ -237,7 +237,7 @@
         '<div class="not-found">' +
           '<h2>Artist Not Found</h2>' +
           '<p>The artist you are looking for does not exist.</p>' +
-          '<a href="artists.html" class="btn btn-primary">Back to Artists</a>' +
+          '<a href="' + (window.PAGE_BASE || '') + 'artists.html" class="btn btn-primary">Back to Artists</a>' +
         '</div>';
     }
   }

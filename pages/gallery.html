@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Artwork — Kay's Originals</title>
+  <title>Gallery — Kay's Originals</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
 
@@ -15,8 +15,8 @@
   <div class="color-bar"></div>
   <nav class="main-nav" id="mainNav">
     <div class="nav-inner">
-      <a href="index.html" class="nav-brand">
-        <img src="images/KaysOrigLogo.png" alt="Kay's Originals" class="nav-logo">
+      <a href="../index.html" class="nav-brand">
+        <img src="../images/KaysOrigLogo.png" alt="Kay's Originals" class="nav-logo">
         <span class="nav-slogan">Discover Original Art</span>
       </a>
       <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
@@ -32,11 +32,27 @@
     </div>
   </nav>
 
-  <!-- ===== BACK LINK ===== -->
+  <!-- ===== PAGE HEADER ===== -->
+  <section class="page-hero">
+    <div class="section-inner">
+      <h1>All Artwork</h1>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY FILTERS ===== -->
   <section class="page-content">
     <div class="section-inner">
-      <a href="gallery.html" class="back-link">&larr; Back to Gallery</a>
-      <div id="artworkDetail"></div>
+      <div class="gallery-filters" id="galleryFilters">
+        <button class="filter-pill active" data-category="all">All</button>
+        <button class="filter-pill" data-category="painting">Paintings</button>
+        <button class="filter-pill" data-category="sculpture">Sculptures</button>
+        <button class="filter-pill" data-category="sketch">Sketches</button>
+      </div>
+      <div class="gallery-search-row">
+        <input type="text" id="gallerySearch" class="gallery-search" placeholder="Search artwork or artist...">
+        <span id="resultsCount" class="results-count"></span>
+      </div>
+      <div id="galleryGrid" class="artwork-grid"></div>
     </div>
   </section>
 
@@ -44,7 +60,7 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <img src="images/KaysOrigLogo.png" alt="Kay's Originals" class="footer-logo">
+        <img src="../images/KaysOrigLogo.png" alt="Kay's Originals" class="footer-logo">
         <p class="footer-slogan">Discover Original Art</p>
         <p class="footer-tagline">A curated gallery celebrating bold, original artwork from visionary artists.</p>
       </div>
@@ -78,7 +94,8 @@
     </div>
   </footer>
 
-  <script src="js/data.js"></script>
-  <script src="js/main.js"></script>
+  <script>window.PAGE_BASE = '';</script>
+  <script src="../js/data.js"></script>
+  <script src="../js/main.js"></script>
 </body>
 </html>

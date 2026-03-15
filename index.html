@@ -23,17 +23,17 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="navLinks">
-        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-        <li><a href="artists.html" class="nav-link">Artists</a></li>
-        <li><a href="consignment.html" class="nav-link">Consignment</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="pages/gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="pages/artists.html" class="nav-link">Artists</a></li>
+        <li><a href="pages/consignment.html" class="nav-link">Consignment</a></li>
+        <li><a href="pages/about.html" class="nav-link">About</a></li>
+        <li><a href="pages/contact.html" class="nav-link">Contact</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- ===== HERO ===== -->
-  <section class="page-hero home-hero">
+  <section class="home-hero">
     <div class="hero-slideshow">
       <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1577720643272-265f09367456?w=1600&h=900&fit=crop')"></div>
       <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1600&h=900&fit=crop')"></div>
@@ -46,8 +46,8 @@
       <h1>Original Art, Personally Curated</h1>
       <p class="hero-subtitle">Discover bold, original artwork from visionary artists — all in one place.</p>
       <div class="hero-actions">
-        <a href="gallery.html" class="btn btn-primary">Browse Artwork</a>
-        <a href="consignment.html" class="btn btn-secondary">For Artists</a>
+        <a href="pages/gallery.html" class="btn btn-primary">Browse Artwork</a>
+        <a href="pages/consignment.html" class="btn btn-secondary">For Artists</a>
       </div>
     </div>
   </section>
@@ -61,7 +61,7 @@
       </div>
       <div id="featuredGrid" class="artwork-grid"></div>
       <div class="section-cta">
-        <a href="gallery.html" class="btn btn-primary">See All Artwork</a>
+        <a href="pages/gallery.html" class="btn btn-primary">See All Artwork</a>
       </div>
     </div>
   </section>
@@ -75,7 +75,7 @@
       </div>
       <div class="category-grid">
 
-        <a href="gallery.html?category=painting" class="category-card">
+        <a href="pages/gallery.html?category=painting" class="category-card">
           <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=500&fit=crop" alt="Paintings category" class="category-img">
           <div class="category-overlay"></div>
           <div class="category-content">
@@ -84,7 +84,7 @@
           </div>
         </a>
 
-        <a href="gallery.html?category=sculpture" class="category-card">
+        <a href="pages/gallery.html?category=sculpture" class="category-card">
           <img src="https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=800&h=500&fit=crop" alt="Sculptures category" class="category-img">
           <div class="category-overlay"></div>
           <div class="category-content">
@@ -93,7 +93,7 @@
           </div>
         </a>
 
-        <a href="gallery.html?category=sketch" class="category-card">
+        <a href="pages/gallery.html?category=sketch" class="category-card">
           <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&h=500&fit=crop" alt="Sketches category" class="category-img">
           <div class="category-overlay"></div>
           <div class="category-content">
@@ -115,7 +115,7 @@
       </div>
       <div id="artistGrid" class="artist-grid"></div>
       <div class="section-cta">
-        <a href="artists.html" class="btn btn-secondary">View All Artists</a>
+        <a href="pages/artists.html" class="btn btn-secondary">View All Artists</a>
       </div>
     </div>
   </section>
@@ -141,19 +141,19 @@
       <div class="footer-links">
         <h4>Explore</h4>
         <ul>
-          <li><a href="gallery.html?category=painting">Paintings</a></li>
-          <li><a href="gallery.html?category=sculpture">Sculptures</a></li>
-          <li><a href="gallery.html?category=sketch">Sketches</a></li>
-          <li><a href="gallery.html">All Artwork</a></li>
+          <li><a href="pages/gallery.html?category=painting">Paintings</a></li>
+          <li><a href="pages/gallery.html?category=sculpture">Sculptures</a></li>
+          <li><a href="pages/gallery.html?category=sketch">Sketches</a></li>
+          <li><a href="pages/gallery.html">All Artwork</a></li>
         </ul>
       </div>
       <div class="footer-links">
         <h4>Company</h4>
         <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="consignment.html">Consignment</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="pages/about.html">About Us</a></li>
+          <li><a href="pages/consignment.html">Consignment</a></li>
+          <li><a href="pages/contact.html">Contact</a></li>
+          <li><a href="pages/faq.html">FAQ</a></li>
         </ul>
       </div>
       <div class="footer-contact">
@@ -168,6 +168,7 @@
     </div>
   </footer>
 
+  <script>window.PAGE_BASE = 'pages/';</script>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>

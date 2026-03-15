@@ -943,7 +943,7 @@ ul {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(30, 30, 30, 0.55);
+  background: rgba(30, 30, 30, 0.65);
   z-index: 1;
 }
 
@@ -972,11 +972,11 @@ ul {
 .hero-subtitle {
   font-size: 1.1rem;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.95);
   max-width: 500px;
   margin: 0 auto 2rem;
   line-height: 1.6;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .hero-actions {
@@ -1029,25 +1029,38 @@ ul {
    10. SHARED PAGE STYLES
    ============================================= */
 .page-hero {
-  background: var(--white);
-  padding: 3rem 0 2rem;
-  border-bottom: 1px solid var(--light-gray);
+  background: var(--light-gray);
+  padding: 4rem 0 3rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .page-hero h1 {
   font-family: var(--font-heading);
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   font-weight: 400;
+  color: var(--charcoal);
+  line-height: 1.1;
 }
 
 .page-hero .hero-subtitle,
 .page-hero p {
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 300;
   color: var(--text-secondary);
-  margin-top: 0.5rem;
-  max-width: 500px;
-  line-height: 1.6;
+  margin: 0.75rem 0 0 0;
+  max-width: 520px;
+  line-height: 1.65;
+  text-shadow: none;
+}
+
+.page-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--teal);
+  margin-bottom: 0.5rem;
+  display: block;
 }
 
 .page-content {
@@ -1271,43 +1284,84 @@ ul {
    ============================================= */
 .about-hero {
   text-align: center;
-  padding: 3.5rem 0 2rem;
-  background: var(--white);
+  padding: 4rem 0 3rem;
+  background: var(--light-gray);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .about-hero .hero-logo-img {
   height: 90px;
 }
 
-.about-story {
-  padding: 3rem 0;
-  background: var(--light-gray);
+.about-hero h1 {
+  font-family: var(--font-heading);
+  font-size: 2.75rem;
+  font-weight: 400;
+  color: var(--charcoal);
 }
 
-.about-grid {
+.about-hero .hero-subtitle {
+  color: var(--text-secondary);
+  text-shadow: none;
+  margin-top: 0.75rem;
+  font-size: 1.05rem;
+  font-weight: 300;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.65;
+}
+
+.about-story {
+  padding: 3rem 0;
+}
+
+.about-two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
   align-items: center;
 }
 
-.about-grid img {
+.about-image img {
   width: 100%;
   border-radius: 8px;
 }
 
-.about-grid h3 {
+.about-text h2 {
   font-family: var(--font-heading);
   font-size: 1.6rem;
   font-weight: 400;
   margin-bottom: 0.75rem;
 }
 
-.about-grid p {
+.about-text p {
   font-size: 0.95rem;
   color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: 0.75rem;
+}
+
+.about-cta {
+  text-align: center;
+  padding: 3.5rem 0;
+}
+
+.about-cta h2 {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+}
+
+.about-cta p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
 }
 
 /* =============================================
@@ -1331,7 +1385,6 @@ ul {
 
 .consignment-steps {
   padding: 3rem 0;
-  background: var(--light-gray);
 }
 
 .steps-grid {
@@ -1374,24 +1427,25 @@ ul {
   line-height: 1.6;
 }
 
-.consignment-qualities {
+.consignment-values {
   padding: 3rem 0;
   background: var(--white);
 }
 
-.qualities-grid {
+.values-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
 }
 
-.quality-item strong {
-  display: block;
-  font-size: 0.95rem;
+.value-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 400;
   margin-bottom: 0.25rem;
 }
 
-.quality-item p {
+.value-card p {
   font-size: 0.88rem;
   color: var(--text-secondary);
   line-height: 1.6;
@@ -1412,7 +1466,7 @@ ul {
 /* =============================================
    16. CONTACT PAGE
    ============================================= */
-.contact-grid {
+.contact-layout {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 3rem;
@@ -1456,11 +1510,11 @@ ul {
   resize: vertical;
 }
 
-.contact-info-block {
+.info-block {
   margin-bottom: 1.5rem;
 }
 
-.contact-info-block h4 {
+.info-block h4 {
   font-size: 0.82rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -1469,7 +1523,7 @@ ul {
   margin-bottom: 0.2rem;
 }
 
-.contact-info-block p {
+.info-block p {
   font-size: 0.92rem;
   color: var(--text-secondary);
   line-height: 1.6;
@@ -1478,7 +1532,7 @@ ul {
 /* =============================================
    17. FAQ PAGE
    ============================================= */
-.faq-section-label {
+.faq-section-heading {
   font-size: 0.72rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -1646,7 +1700,7 @@ ul {
   }
 
   /* Contact page */
-  .contact-grid {
+  .contact-layout {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
@@ -1657,7 +1711,7 @@ ul {
   }
 
   /* About page */
-  .about-grid {
+  .about-two-col {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
@@ -1680,6 +1734,11 @@ ul {
   .gallery-search-row {
     flex-direction: column;
     gap: 0.75rem;
+  }
+
+  .page-hero h1,
+  .about-hero h1 {
+    font-size: 2.25rem;
   }
 }
 
@@ -1759,16 +1818,29 @@ ul {
 
   /* Consignment */
   .steps-grid { grid-template-columns: 1fr; }
-  .qualities-grid { grid-template-columns: 1fr; }
+  .values-grid { grid-template-columns: 1fr; }
 
   /* Contact */
-  .contact-grid { grid-template-columns: 1fr; }
+  .contact-layout { grid-template-columns: 1fr; }
 
   /* FAQ */
   .faq-question { font-size: 1rem; padding: 1rem 2.5rem 1rem 0; }
 
   /* Profile */
   .profile-photo { width: 150px; height: 150px; }
+
+  /* Page heroes */
+  .page-hero,
+  .about-hero {
+    padding: 3rem 0 2.25rem;
+  }
+  .page-hero h1,
+  .about-hero h1 {
+    font-size: 1.85rem;
+  }
+  .about-hero .hero-logo-img {
+    height: 70px;
+  }
 
   /* Quote */
   .founder-quote p { font-size: 1.3rem; }

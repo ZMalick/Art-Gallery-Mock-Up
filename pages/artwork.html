@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Artist — Kay's Originals</title>
+  <title>Artwork — Kay's Originals</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
 
@@ -15,16 +15,16 @@
   <div class="color-bar"></div>
   <nav class="main-nav" id="mainNav">
     <div class="nav-inner">
-      <a href="index.html" class="nav-brand">
-        <img src="images/KaysOrigLogo.png" alt="Kay's Originals" class="nav-logo">
+      <a href="../index.html" class="nav-brand">
+        <img src="../images/KaysOrigLogo.png" alt="Kay's Originals" class="nav-logo">
         <span class="nav-slogan">Discover Original Art</span>
       </a>
       <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="navLinks">
-        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-        <li><a href="artists.html" class="nav-link active">Artists</a></li>
+        <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+        <li><a href="artists.html" class="nav-link">Artists</a></li>
         <li><a href="consignment.html" class="nav-link">Consignment</a></li>
         <li><a href="about.html" class="nav-link">About</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
@@ -32,11 +32,11 @@
     </div>
   </nav>
 
-  <!-- ===== ARTIST DETAIL ===== -->
+  <!-- ===== BACK LINK ===== -->
   <section class="page-content">
     <div class="section-inner">
-      <a href="artists.html" class="back-link">&larr; Back to Artists</a>
-      <div id="artistDetail"></div>
+      <a href="gallery.html" class="back-link">&larr; Back to Gallery</a>
+      <div id="artworkDetail"></div>
     </div>
   </section>
 
@@ -44,7 +44,7 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <img src="images/KaysOrigLogo.png" alt="Kay's Originals" class="footer-logo">
+        <img src="../images/KaysOrigLogo.png" alt="Kay's Originals" class="footer-logo">
         <p class="footer-slogan">Discover Original Art</p>
         <p class="footer-tagline">A curated gallery celebrating bold, original artwork from visionary artists.</p>
       </div>
@@ -78,7 +78,8 @@
     </div>
   </footer>
 
-  <script src="js/data.js"></script>
-  <script src="js/main.js"></script>
+  <script>window.PAGE_BASE = '';</script>
+  <script src="../js/data.js"></script>
+  <script src="../js/main.js"></script>
 </body>
 </html>
