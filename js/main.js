@@ -38,6 +38,11 @@
     });
   })();
 
+  /* ---- Resolve local vs. external image paths ---- */
+  function resolveImageSrc(src) {
+    return src && src.startsWith('http') ? src : (window.IMAGE_BASE || '') + src;
+  }
+
   /* ---- Render an artwork card (reused everywhere) ---- */
   function renderArtworkCard(art, isRecent) {
     var artist = KaysData.getArtist(art.artistId);
@@ -46,7 +51,7 @@
     return '<article class="artwork-card">' +
       '<a href="' + base + 'artwork.html?id=' + art.id + '" class="card-link">' +
         '<div class="card-frame">' +
-          '<img src="' + art.image + '" alt="' + art.title + '" class="card-image" loading="lazy">' +
+          '<img src="' + resolveImageSrc(art.image) + '" alt="' + art.title + '" class="card-image" loading="lazy">' +
           '<div class="card-overlay"><div class="overlay-content">' +
             '<span class="overlay-title">' + art.title + '</span>' +
             '<span class="overlay-artist">' + (artist ? artist.name : '') + '</span>' +
@@ -306,7 +311,7 @@
       artworkDetail.innerHTML =
         '<div class="detail-layout">' +
           '<div class="detail-image-wrap">' +
-            '<img src="' + artwork.imageLg + '" alt="' + artwork.title + '" class="detail-image artwork-detail-image">' +
+            '<img src="' + resolveImageSrc(artwork.imageLg) + '" alt="' + artwork.title + '" class="detail-image artwork-detail-image">' +
           '</div>' +
           '<div class="detail-info">' +
             '<span class="media-tag tag-' + artwork.category + '">' + capitalize(artwork.category) + '</span>' +
@@ -340,7 +345,7 @@
           lightbox.className = 'lightbox active';
           lightbox.innerHTML =
             '<button class="lightbox-close" aria-label="Close">&times;</button>' +
-            '<img src="' + (artwork.imageLg || artwork.image) + '" alt="' + artwork.title + '">';
+            '<img src="' + resolveImageSrc(artwork.imageLg || artwork.image) + '" alt="' + artwork.title + '">';
           document.body.appendChild(lightbox);
           document.body.style.overflow = 'hidden';
 

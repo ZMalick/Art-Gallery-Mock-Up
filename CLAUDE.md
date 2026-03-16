@@ -18,6 +18,7 @@ Design inspiration: **Uprise Art** — clean, editorial, gallery aesthetic. Kay 
 1. **Invoke the `frontend-design` skill** before writing any frontend code, every session, no exceptions.
 2. Check `images/` for the logo (`KaysOrigLogo.png`) and any new assets before designing.
 3. Check `Extra Notes/` for class notes and background docs that may affect requirements.
+4. **Read `reports/lessons-learned.md`** before starting any task — it contains known patterns, resolved gotchas, and codebase-specific solutions. Add a new entry whenever you discover something non-obvious or the user corrects a repeated mistake.
 
 ## Tech Stack
 - **HTML/CSS/JS only** — vanilla, no frameworks, no build tools, no package.json
@@ -118,6 +119,15 @@ Sticky dark nav bar that stays on screen at all times:
 - When making visual changes, screenshot and compare against design intent
 - Do at least 2 visual comparison rounds before considering a page done
 - Check: spacing, font sizes, colors (exact hex), alignment, responsive behavior
+
+## Reports
+
+Persistent log of discovered patterns and resolved gotchas specific to this codebase.
+
+- **File:** `reports/lessons-learned.md`
+- **Read it** at the start of every session (step 4 of Always Do First above)
+- **Add an entry** after solving a non-obvious problem, discovering an important codebase pattern, or when the user corrects a repeated mistake
+- **Format:** date, problem description, solution, affected files
 
 ## Hard Rules
 1. **No sales functionality** — no prices, no carts, no checkout, no "buy" buttons
