@@ -268,8 +268,8 @@ var KaysData = (function () {
       medium: 'Found metal, reclaimed wood, steel wire',
       dimensions: '48.3 x 22.9 x 22.9 cm',
       description: 'A vertical assemblage of salvaged industrial parts — gears, brackets, and weathered wood fragments — stacked into a precarious tower that speaks to resilience and reinvention.',
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=450&fit=crop',
-      imageLg: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1200&h=900&fit=crop'
+      image: 'https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=600&h=450&fit=crop',
+      imageLg: 'https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=1200&h=900&fit=crop'
     },
     {
       id: 'vessel-of-memory',
