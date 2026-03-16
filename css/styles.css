@@ -1668,6 +1668,198 @@ textarea:focus-visible {
   padding-bottom: 1.1rem;
 }
 
+/* ===== SKIP LINK ===== */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 10000;
+  padding: 0.5rem 1rem;
+  background: var(--charcoal);
+  color: #fff;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 0.5rem;
+}
+
+/* ===== MOBILE MENU BACKDROP ===== */
+.nav-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  background: rgba(0, 0, 0, 0.5);
+}
+.nav-backdrop.active {
+  display: block;
+}
+
+/* ===== LIGHTBOX OVERLAY ===== */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.9);
+  align-items: center;
+  justify-content: center;
+}
+.lightbox.active {
+  display: flex;
+}
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.5rem;
+}
+.artwork-detail-image {
+  cursor: zoom-in;
+}
+
+/* ===== EMPTY STATE ===== */
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--mid-gray);
+  font-family: var(--font-body);
+}
+.empty-state p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+.empty-state a {
+  color: var(--blue);
+  text-decoration: underline;
+}
+.empty-state a:hover {
+  color: var(--blue-dark);
+}
+
+/* ===== RECENTLY ADDED BADGE ===== */
+.badge-new {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--charcoal);
+  font-size: 0.7rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* ===== ARTIST DETAIL HERO BANNER ===== */
+.artist-hero-banner {
+  background: linear-gradient(135deg, var(--light-gray) 0%, var(--off-white) 100%);
+  padding: 3rem 0;
+}
+
+/* ===== GALLERY DROPDOWNS ===== */
+.gallery-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.gallery-select {
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--mid-gray);
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  background: var(--off-white);
+  color: var(--charcoal);
+  cursor: pointer;
+}
+.gallery-select:focus {
+  outline: 2px solid var(--blue);
+  outline-offset: 1px;
+}
+
+/* ===== FORM FEEDBACK ===== */
+.form-success {
+  background: var(--teal);
+  color: #fff;
+  padding: 1rem 1.25rem;
+  border-radius: 6px;
+  font-family: var(--font-body);
+  margin-top: 1rem;
+}
+.form-error-msg {
+  color: var(--coral);
+  font-size: 0.8rem;
+  font-family: var(--font-body);
+  margin-top: 0.25rem;
+}
+.form-group.has-error input,
+.form-group.has-error textarea,
+.form-group.has-error select {
+  border-color: var(--coral);
+}
+
+/* ===== CARD DIMENSIONS ===== */
+.card-dimensions {
+  font-size: 0.75rem;
+  color: var(--mid-gray);
+  font-family: var(--font-body);
+}
+
+/* ===== SOCIAL ICONS ===== */
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: var(--mid-gray);
+  transition: color 0.2s ease;
+}
+.footer-social a:hover {
+  color: var(--gold);
+}
+.footer-social svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+/* ===== ACTIVE NAV STATE ===== */
+.nav-link.active {
+  color: var(--gold);
+}
+
+/* ===== PRINT ===== */
+@media print {
+  .site-nav, .main-nav, .site-footer, .hamburger, .skip-link,
+  .nav-backdrop, .lightbox, .color-bar { display: none; }
+  body { background: white; color: black; }
+  a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; }
+  img { max-width: 100%; page-break-inside: avoid; }
+}
+
 /* =============================================
    RESPONSIVE
    ============================================= */
@@ -1811,6 +2003,11 @@ textarea:focus-visible {
     flex-wrap: wrap;
   }
 
+  .gallery-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
   .gallery-search-row {
     flex-direction: column;
     gap: 0.75rem;
@@ -1902,6 +2099,9 @@ textarea:focus-visible {
 
   /* Contact */
   .contact-layout { grid-template-columns: 1fr; }
+
+  /* Gallery controls */
+  .gallery-controls { gap: 0.5rem; }
 
   /* FAQ */
   .faq-question { font-size: 1rem; padding: 1rem 2.5rem 1rem 0; }

@@ -8,8 +8,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" href="../images/favicon.png" type="image/png">
+  <meta name="description" content="Browse our full collection of original paintings, sculptures, and sketches.">
+  <meta property="og:title" content="Gallery — Kay's Originals">
+  <meta property="og:description" content="Browse our full collection of original paintings, sculptures, and sketches.">
+  <meta property="og:image" content="../images/KaysOrigLogo.png">
+  <meta property="og:type" content="website">
 </head>
-<body>
+<body data-page="gallery">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- ===== COLOR BAR & NAV ===== -->
   <div class="color-bar"></div>
@@ -32,6 +39,7 @@
     </div>
   </nav>
 
+  <main id="main-content">
   <!-- ===== PAGE HEADER ===== -->
   <section class="page-hero">
     <div class="section-inner">
@@ -53,9 +61,25 @@
         <input type="text" id="gallerySearch" class="gallery-search" placeholder="Search artwork or artist...">
         <span id="resultsCount" class="results-count"></span>
       </div>
+      <div class="gallery-controls">
+        <select id="artistFilter" class="gallery-select" aria-label="Filter by artist">
+          <option value="">All Artists</option>
+        </select>
+        <select id="sortSelect" class="gallery-select" aria-label="Sort artwork">
+          <option value="default">Sort: Default</option>
+          <option value="newest">Sort: Newest First</option>
+          <option value="artist">Sort: Artist (A–Z)</option>
+          <option value="title">Sort: Title (A–Z)</option>
+        </select>
+      </div>
       <div id="galleryGrid" class="artwork-grid"></div>
+      <div id="galleryEmpty" class="empty-state" style="display:none;">
+        <p>No artwork matches your current filters.</p>
+        <a href="#" id="clearFilters">Clear filters</a>
+      </div>
     </div>
   </section>
+  </main>
 
   <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
@@ -85,8 +109,8 @@
       </div>
       <div class="footer-contact">
         <h4>Get in Touch</h4>
-        <p><strong>Email</strong><br>info@kaysoriginals.com</p>
-        <p><strong>Phone</strong><br>(555) 012-3456</p>
+        <p><strong>Email</strong><br><a href="mailto:info@kaysoriginals.com">info@kaysoriginals.com</a></p>
+        <p><strong>Phone</strong><br><a href="tel:+15550123456">(555) 012-3456</a></p>
         <p><strong>Location</strong><br>Austin, TX</p>
       </div>
     </div>
