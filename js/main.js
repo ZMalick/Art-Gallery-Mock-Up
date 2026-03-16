@@ -23,7 +23,7 @@
       '<a href="' + (window.PAGE_BASE || '') + 'artwork.html?id=' + art.id + '" class="card-link">' +
         '<div class="card-frame">' +
           '<img src="' + art.image + '" alt="' + art.title + '" class="card-image" loading="lazy">' +
-          '<div class="card-overlay"><span class="overlay-text">View Details</span></div>' +
+          '<div class="card-overlay"><div class="overlay-content"><span class="overlay-title">' + art.title + '</span><span class="overlay-artist">' + artistName + '</span></div></div>' +
         '</div>' +
         '<div class="card-info">' +
           '<span class="media-tag tag-' + art.category + '">' + capitalize(art.category) + '</span>' +
@@ -182,6 +182,9 @@
             '<h3>About the Artist</h3>' +
             '<p>' + artist.shortBio + ' <a href="' + (window.PAGE_BASE || '') + 'artist.html?id=' + artist.id + '">View full profile &rarr;</a></p>' +
           '</div>' : '');
+      // Update breadcrumb title
+      var breadcrumbTitle = document.getElementById('breadcrumbTitle');
+      if (breadcrumbTitle) breadcrumbTitle.textContent = art.title;
     } else {
       artworkDetail.innerHTML =
         '<div class="not-found">' +
@@ -196,12 +199,38 @@
      PAGE: All Artists
      ======================================== */
   var allArtistsGrid = document.getElementById('allArtistsGrid');
+  var artistSearch = document.getElementById('artistSearch');
+  var artistResultsCount = document.getElementById('artistResultsCount');
+
   if (allArtistsGrid) {
-    var allHtml = '';
-    for (var k = 0; k < KaysData.artists.length; k++) {
-      allHtml += renderArtistCard(KaysData.artists[k]);
+    function renderArtists(query) {
+      var q = query ? query.toLowerCase() : '';
+      var filtered = [];
+      for (var k = 0; k < KaysData.artists.length; k++) {
+        var artist = KaysData.artists[k];
+        if (!q || artist.name.toLowerCase().indexOf(q) !== -1 || artist.media.toLowerCase().indexOf(q) !== -1) {
+          filtered.push(artist);
+        }
+      }
+
+      var allHtml = '';
+      for (var m = 0; m < filtered.length; m++) {
+        allHtml += renderArtistCard(filtered[m]);
+      }
+      allArtistsGrid.innerHTML = allHtml || '<p class="no-results">No artists found matching your search.</p>';
+
+      if (artistResultsCount) {
+        artistResultsCount.textContent = filtered.length + ' artist' + (filtered.length !== 1 ? 's' : '');
+      }
     }
-    allArtistsGrid.innerHTML = allHtml;
+
+    if (artistSearch) {
+      artistSearch.addEventListener('input', function () {
+        renderArtists(this.value.trim());
+      });
+    }
+
+    renderArtists('');
   }
 
   /* ========================================
@@ -232,6 +261,10 @@
           '<h2 class="section-heading" style="font-size:1.6rem;margin-bottom:1.5rem;">Works in Gallery</h2>' +
           '<div class="artwork-grid">' + worksHtml + '</div>' +
         '</section>';
+
+      // Update breadcrumb title
+      var breadcrumbTitle = document.getElementById('breadcrumbTitle');
+      if (breadcrumbTitle) breadcrumbTitle.textContent = a.name;
     } else {
       artistDetail.innerHTML =
         '<div class="not-found">' +
