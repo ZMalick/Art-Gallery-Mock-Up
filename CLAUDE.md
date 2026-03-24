@@ -17,7 +17,7 @@ Design inspiration: **Uprise Art** — clean, editorial, gallery aesthetic. Prof
 ## Always Do First
 1. Check `images/` for the logo (`KaysOrigLogo.png`) and any new assets before designing.
 2. Check `Extra Notes/` for class notes and background docs that may affect requirements.
-3. **Read `reports/lessons-learned.md`** before starting any complex or multi-file task — it contains known patterns and resolved gotchas. Add a new entry when you discover something non-obvious or the user corrects a mistake.
+3. **Read `docs/lessons-learned.md`** before starting any complex or multi-file task — it contains known patterns and resolved gotchas. Add a new entry when you discover something non-obvious or the user corrects a mistake.
 
 ## Tech Stack
 - **HTML/CSS/JS only** — vanilla, no frameworks, no build tools, no package.json
