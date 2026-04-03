@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Artist Login — Kay's Originals</title>
+  <title>Exhibition — Kay's Originals</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="icon" href="../images/favicon.png" type="image/png">
-  <meta name="description" content="Sign in to your artist dashboard at Kay's Originals gallery.">
-  <meta property="og:title" content="Artist Login — Kay's Originals">
-  <meta property="og:description" content="Sign in to your artist dashboard at Kay's Originals gallery.">
+  <meta name="description" content="Exhibition details at Kay's Originals gallery.">
+  <meta property="og:title" content="Exhibition — Kay's Originals">
+  <meta property="og:description" content="Exhibition details at Kay's Originals gallery.">
   <meta property="og:image" content="../images/KaysOrigLogo.png">
   <meta property="og:type" content="website">
 </head>
-<body data-page="artist-login">
+<body data-page="exhibition">
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- ===== COLOR BAR & NAV ===== -->
@@ -24,80 +24,66 @@
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
         <img src="../images/KaysOrigLogo.png" alt="Kay's Originals" class="nav-logo">
-        <span class="nav-slogan">Discover Original Art</span>
+        <span class="nav-slogan">Exhibition Detail</span>
       </a>
       <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="navLinks">
-        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li class="has-dropdown">
+          <button class="dropdown-toggle nav-link" aria-haspopup="true" aria-expanded="false">Artwork</button>
+          <ul class="dropdown" role="menu">
+            <li><a href="gallery.html?category=painting" class="nav-link">Paintings</a></li>
+            <li><a href="gallery.html?category=sculpture" class="nav-link">Sculptures</a></li>
+            <li><a href="gallery.html?category=sketch" class="nav-link">Sketches</a></li>
+          </ul>
+        </li>
         <li><a href="artists.html" class="nav-link">Artists</a></li>
-        <li><a href="consignment.html" class="nav-link">Consignment</a></li>
+        <li><a href="exhibitions.html" class="nav-link">Exhibitions</a></li>
         <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="consignment.html" class="nav-link">For Artists</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
-        <li><a href="artist-login.html" class="nav-link nav-link-login">Artist Login</a></li>
       </ul>
     </div>
   </nav>
 
   <main id="main-content">
-
-  <!-- ===== PAGE HEADER ===== -->
+  <!-- ===== BREADCRUMB ===== -->
   <section class="page-hero">
     <div class="section-inner">
-      <span class="page-label">Artist Portal</span>
-      <h1>Artist Login</h1>
-      <p class="hero-subtitle">Access your artist dashboard at Kay's Originals.</p>
-    </div>
-  </section>
-
-  <!-- ===== LOGIN FORM ===== -->
-  <section class="page-content">
-    <div class="section-inner">
-      <div style="max-width: 460px; margin: 0 auto;">
-
-        <div class="contact-form">
-          <h2>Sign In</h2>
-          <form id="artistLoginForm">
-
-            <div class="form-group">
-              <label for="loginEmail">Email</label>
-              <input type="email" id="loginEmail" name="email" required placeholder="your@email.com">
-            </div>
-
-            <div class="form-group">
-              <label for="loginPassword">Password</label>
-              <input type="password" id="loginPassword" name="password" required placeholder="Your password">
-            </div>
-
-            <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem;">
-              <input type="checkbox" id="loginRemember" name="remember" style="width: auto;">
-              <label for="loginRemember" style="margin-bottom: 0; font-size: 0.88rem;">Remember me</label>
-            </div>
-
-            <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In</button>
-
-            <div id="loginSuccess" class="form-success" style="display:none;">
-              <p>Signed in successfully. Redirecting to your dashboard...</p>
-            </div>
-
-          </form>
-
-          <p style="text-align: right; margin-top: 0.75rem;">
-            <a href="#" style="font-size: 0.85rem; color: var(--text-secondary);">Forgot password?</a>
-          </p>
-
-          <hr style="border: none; border-top: 1px solid var(--mid-gray); margin: 2rem 0;">
-
-          <p style="text-align: center; font-size: 0.92rem; color: var(--text-secondary);">
-            Don't have an account? <a href="artist-signup.html" style="color: var(--blue); font-weight: 500;">Apply here</a>
-          </p>
-        </div>
-
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="exhibitions.html">Exhibitions</a>
+        <span>/</span>
+        <span id="breadcrumbTitle">Exhibition</span>
+      </nav>
+      <a href="exhibitions.html" class="btn btn-secondary back-btn">&larr; Back to Exhibitions</a>
+      <div id="exhibitionDetail">
+        <!-- Populated by JS -->
       </div>
     </div>
   </section>
 
+  <!-- ===== EXHIBITION ARTWORK ===== -->
+  <section class="page-content" id="exhibitionArtwork" style="display:none;">
+    <div class="section-inner">
+      <h2 class="section-heading" style="font-size:1.6rem;margin-bottom:1.5rem;">Featured Artwork</h2>
+      <div id="exhibitionArtGrid" class="artwork-grid"></div>
+    </div>
+  </section>
+
+  <!-- ===== EXHIBITION ARTISTS ===== -->
+  <section class="page-content" id="exhibitionArtists" style="display:none;">
+    <div class="section-inner">
+      <h2 class="section-heading" style="font-size:1.6rem;margin-bottom:1.5rem;">Participating Artists</h2>
+      <div id="exhibitionArtistGrid" class="artist-grid"></div>
+    </div>
+  </section>
+
+  <section class="page-content">
+    <div class="section-inner" style="text-align:center; padding-top: 0;">
+      <a href="exhibitions.html" class="btn btn-secondary">Back to All Exhibitions</a>
+    </div>
+  </section>
   </main>
 
   <!-- ===== FOOTER ===== -->
@@ -121,7 +107,7 @@
         <h4>Company</h4>
         <ul>
           <li><a href="about.html">About Us</a></li>
-          <li><a href="consignment.html">Consignment</a></li>
+          <li><a href="consignment.html">For Artists</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="faq.html">FAQ</a></li>
         </ul>
@@ -130,7 +116,7 @@
         <h4>Get in Touch</h4>
         <p><strong>Email</strong><br><a href="mailto:info@kaysoriginals.com">info@kaysoriginals.com</a></p>
         <p><strong>Phone</strong><br><a href="tel:+15550123456">(555) 012-3456</a></p>
-        <p><strong>Location</strong><br>Austin, TX</p>
+        <p><strong>Location</strong><br><a href="https://maps.google.com/?q=1234+Gallery+Lane+Suite+100+Austin+TX+78701" target="_blank" rel="noopener">1234 Gallery Lane, Suite 100<br>Austin, TX 78701</a></p>
       </div>
     </div>
     <div class="footer-bottom">
@@ -138,7 +124,7 @@
     </div>
   </footer>
 
-  <script>window.PAGE_BASE = '';</script>
+  <script>window.PAGE_BASE = ''; window.IMAGE_BASE = '../';</script>
   <script src="../js/data.js"></script>
   <script src="../js/main.js"></script>
 </body>

@@ -2,7 +2,18 @@
   "permissions": {
     "allow": [
       "Skill(playwright-cli)",
-      "Skill(playwright-cli:*)"
+      "Skill(playwright-cli:*)",
+      "mcp__plugin_playwright_playwright__browser_navigate",
+      "mcp__plugin_playwright_playwright__browser_take_screenshot",
+      "mcp__plugin_playwright_playwright__browser_click",
+      "mcp__plugin_playwright_playwright__browser_evaluate",
+      "Bash(npx http-server:*)",
+      "mcp__plugin_playwright_playwright__browser_console_messages",
+      "mcp__plugin_playwright_playwright__browser_snapshot",
+      "mcp__plugin_playwright_playwright__browser_close",
+      "Bash(ls .playwright-cli/*.yml)",
+      "Read(//c/Users/zaidm/OneDrive/Desktop/School/Senior/Spring Semester/CS 245 - Working in a Team Environment/Kay's Originals Website/.playwright-cli/$\\(ls .playwright-cli/**)",
+      "Bash(grep -v \"^$\")"
     ]
   }
 }
