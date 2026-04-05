@@ -979,19 +979,19 @@ body[data-page="artists"] .artist-link {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(30, 30, 30, 0.7);
+  background: rgba(30, 30, 30, 0.55);
   color: var(--white);
   text-align: center;
   padding: 0.6rem;
   font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: 0.03em;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.3s;
 }
 
 .storefront-map-link:hover .storefront-map-overlay {
-  opacity: 1;
+  background: rgba(30, 30, 30, 0.75);
 }
 
 .artist-filter-row {
@@ -1101,6 +1101,17 @@ body[data-page="artists"] .artist-link {
   letter-spacing: 0.08em;
   display: block;
   margin-bottom: 0.25rem;
+}
+
+.footer-contact a {
+  color: var(--teal);
+  text-decoration: none;
+  transition: opacity 0.25s;
+}
+
+.footer-contact a:hover {
+  opacity: 0.75;
+  text-decoration: underline;
 }
 
 .footer-bottom {
