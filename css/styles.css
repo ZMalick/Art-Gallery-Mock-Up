@@ -815,8 +815,8 @@ textarea:focus-visible {
 }
 
 .artist-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.09);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.1);
 }
 
 .artist-photo-wrap {
@@ -1033,14 +1033,14 @@ body[data-page="artists"] .artist-link {
   margin: 0 auto;
   padding: 2.5rem 2rem 2rem;
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr 1.1fr;
-  gap: 2.5rem;
+  grid-template-columns: 1.3fr 1fr 1fr 1.2fr;
+  gap: 3rem;
 }
 
 .footer-logo {
   height: 50px;
   width: auto;
-  margin-bottom: 1rem;
+  margin-bottom: 0.6rem;
 }
 
 .footer-slogan {
@@ -1048,7 +1048,7 @@ body[data-page="artists"] .artist-link {
   font-style: italic;
   font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.4);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.4rem;
 }
 
 .footer-tagline {
@@ -1065,7 +1065,7 @@ body[data-page="artists"] .artist-link {
   font-size: 1rem;
   font-weight: 400;
   color: var(--white);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .footer-links ul {
@@ -1089,7 +1089,7 @@ body[data-page="artists"] .artist-link {
 .footer-contact p {
   font-size: 0.85rem;
   font-weight: 300;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   line-height: 1.5;
 }
 
@@ -1100,7 +1100,7 @@ body[data-page="artists"] .artist-link {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   display: block;
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.25rem;
 }
 
 .footer-bottom {
@@ -1697,20 +1697,21 @@ body[data-page="artists"] .artist-link {
 
 .quote-section {
   background: var(--charcoal);
-  padding: 2.5rem 0;
+  padding: 3.5rem 0;
 }
 
 .founder-quote {
   max-width: 680px;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
   border: none;
-  padding: 0;
+  border-left: 4px solid var(--teal);
+  padding: 0 0 0 2rem;
 }
 
 .founder-quote p {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.65rem;
   font-weight: 400;
   font-style: italic;
   color: var(--white);
@@ -2229,18 +2230,6 @@ body[data-page="artists"] .artist-link {
   font-family: var(--font-body);
   margin-top: 1rem;
 }
-.form-error-msg {
-  color: var(--coral);
-  font-size: 0.8rem;
-  font-family: var(--font-body);
-  margin-top: 0.25rem;
-}
-.form-group.has-error input,
-.form-group.has-error textarea,
-.form-group.has-error select {
-  border-color: var(--coral);
-}
-
 /* ===== CARD DIMENSIONS ===== */
 .card-dimensions {
   font-size: 0.75rem;

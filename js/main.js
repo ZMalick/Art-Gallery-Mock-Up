@@ -681,30 +681,8 @@
 
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
-
-      // Clear previous errors
-      contactForm.querySelectorAll('.form-error-msg').forEach(function (el) { el.remove(); });
-      contactForm.querySelectorAll('.form-group.has-error').forEach(function (el) { el.classList.remove('has-error'); });
-
-      var valid = true;
-      contactForm.querySelectorAll('[required]').forEach(function (field) {
-        if (!field.value.trim()) {
-          valid = false;
-          var group = field.closest('.form-group');
-          if (group) {
-            group.classList.add('has-error');
-            var err = document.createElement('div');
-            err.className = 'form-error-msg';
-            err.textContent = 'This field is required.';
-            group.appendChild(err);
-          }
-        }
-      });
-
-      if (valid) {
-        contactForm.reset();
-        if (formSuccess) formSuccess.style.display = 'block';
-      }
+      contactForm.reset();
+      if (formSuccess) formSuccess.style.display = 'block';
     });
   }
 
