@@ -2,3 +2,6 @@
 .superpowers/
 Extra Notes/
 .playwright-cli/
+.playwright-mcp/
+.claude/worktrees/
+screenshots/
