@@ -13,7 +13,26 @@
       "mcp__plugin_playwright_playwright__browser_close",
       "Bash(ls .playwright-cli/*.yml)",
       "Read(//c/Users/zaidm/OneDrive/Desktop/School/Senior/Spring Semester/CS 245 - Working in a Team Environment/Kay's Originals Website/.playwright-cli/$\\(ls .playwright-cli/**)",
-      "Bash(grep -v \"^$\")"
+      "Bash(grep -v \"^$\")",
+      "WebFetch(domain:upload.wikimedia.org)",
+      "WebSearch",
+      "WebFetch(domain:commons.wikimedia.org)",
+      "WebFetch(domain:images.unsplash.com)",
+      "WebFetch(domain:unsplash.com)",
+      "Bash(python -m http.server 8080)",
+      "mcp__plugin_playwright_playwright__browser_resize",
+      "WebFetch(domain:en.wikipedia.org)",
+      "mcp__plugin_figma_figma__generate_figma_design",
+      "Bash(start \"\" \"http://localhost:8091/pages/consignment.html#figmacapture=3531414d-01c0-4ba4-a95f-dbfb892a2cfd&figmaendpoint=https%3A%2F%2Fmcp.figma.com%2Fmcp%2Fcapture%2F3531414d-01c0-4ba4-a95f-dbfb892a2cfd%2Fsubmit&figmadelay=3000\")",
+      "Bash(start \"\" \"http://localhost:8091/pages/contact.html#figmacapture=32ec5b1e-f977-4562-bcf8-40f11cf08470&figmaendpoint=https%3A%2F%2Fmcp.figma.com%2Fmcp%2Fcapture%2F32ec5b1e-f977-4562-bcf8-40f11cf08470%2Fsubmit&figmadelay=3000\")",
+      "Bash(start \"\" \"http://localhost:8091/pages/faq.html#figmacapture=8bd06fef-5cfd-4ce4-8a10-1adc8c4b645a&figmaendpoint=https%3A%2F%2Fmcp.figma.com%2Fmcp%2Fcapture%2F8bd06fef-5cfd-4ce4-8a10-1adc8c4b645a%2Fsubmit&figmadelay=3000\")",
+      "Bash(start \"\" \"http://localhost:8091/pages/exhibitions.html#figmacapture=cf519dce-2f9f-4c6a-a3a7-2e9059a6a04e&figmaendpoint=https%3A%2F%2Fmcp.figma.com%2Fmcp%2Fcapture%2Fcf519dce-2f9f-4c6a-a3a7-2e9059a6a04e%2Fsubmit&figmadelay=3000\")",
+      "mcp__plugin_figma_figma__get_metadata",
+      "mcp__plugin_figma_figma__use_figma"
     ]
-  }
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "openspace"
+  ]
 }
