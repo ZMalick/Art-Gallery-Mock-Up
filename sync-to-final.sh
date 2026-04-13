@@ -20,11 +20,13 @@ cp "$SRC/js/main.js"              "$DEST/js/main.js"
 cp "$SRC/images/KaysOrigLogo.png" "$DEST/images/KaysOrigLogo.png"
 cp "$SRC/images/favicon.png"      "$DEST/images/favicon.png"
 cp "$SRC/images/reclaimed-tower.jpg" "$DEST/images/reclaimed-tower.jpg"
+cp "$SRC/images/gallery-front.jpg"  "$DEST/images/gallery-front.jpg"
+cp "$SRC/Open Website.bat"          "$DEST/Open Website.bat"
 
 # Commit and push if there are changes
 cd "$DEST"
 
-if git diff --quiet && git diff --cached --quiet; then
+if git diff --quiet && git diff --cached --quiet && [ -z "$(git ls-files --others --exclude-standard)" ]; then
   echo "No changes to sync — Final repo is already up to date."
   exit 0
 fi

@@ -43,7 +43,7 @@ var KaysData = (function () {
       id: 'davinci',
       name: 'Leonardo da Vinci',
       media: 'Painting & Sketching',
-      photo: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=400&fit=crop',
+      photo: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop',
       bio: 'Leonardo di ser Piero da Vinci (1452\u20131519) was an Italian polymath of the High Renaissance whose interests spanned painting, sculpture, architecture, science, music, mathematics, and engineering. Often described as the archetype of the Renaissance Man, Leonardo is celebrated for masterpieces such as the Mona Lisa and The Last Supper. His notebooks, filled with meticulous anatomical studies, inventive sketches, and scientific observations, reveal a mind of unparalleled curiosity. Leonardo\'s ability to merge art with science set a standard for creative inquiry that endures to this day.',
       shortBio: 'Italian Renaissance polymath whose paintings, anatomical sketches, and inventive notebooks defined the ideal of the universal genius.'
     },
@@ -442,7 +442,51 @@ var KaysData = (function () {
     }
   ];
 
+  /* ---- Iteration 2: Pricing + Permanent Collection ----
+     Historical masterpieces belong to the permanent collection and are not for sale.
+     Contemporary consigned pieces carry a display-only inquiry price. */
+  var PERMANENT_IDS = [
+    'starry-night', 'water-lilies', 'the-thinker', 'self-portrait-thorn',
+    'vitruvian-man', 'les-demoiselles', 'guernica', 'impression-sunrise',
+    'the-kiss-rodin', 'anatomy-studies', 'the-two-fridas', 'sunflowers'
+  ];
+  var PRICES = {
+    'desert-bloom': 4200,
+    'amber-horizon': 3800,
+    'reclaimed-tower': 2900,
+    'vessel-of-memory': 2400,
+    'bridge-and-fog': 1800,
+    'stairwell-light': 1600,
+    'portrait-in-gold': 3200,
+    'gesture-study-iv': 950,
+    'evening-figure': 3500
+  };
+  (function applyPricingFlags() {
+    for (var i = 0; i < artworks.length; i++) {
+      var aw = artworks[i];
+      aw.inPermanentCollection = PERMANENT_IDS.indexOf(aw.id) !== -1;
+      aw.price = PRICES[aw.id] != null ? PRICES[aw.id] : null;
+    }
+  })();
+
   /* ---- Helper Functions ---- */
+
+  function getLastName(fullName) {
+    var parts = (fullName || '').trim().split(/\s+/);
+    return parts[parts.length - 1] || '';
+  }
+
+  function sortArtworksByArtistLastName(list) {
+    var copy = list.slice();
+    copy.sort(function (a, b) {
+      var la = getLastName((getArtist(a.artistId) || {}).name);
+      var lb = getLastName((getArtist(b.artistId) || {}).name);
+      var cmp = la.localeCompare(lb);
+      if (cmp !== 0) return cmp;
+      return a.title.localeCompare(b.title);
+    });
+    return copy;
+  }
 
   function getArtist(id) {
     for (var i = 0; i < artists.length; i++) {
@@ -573,6 +617,7 @@ var KaysData = (function () {
     getArtwork: getArtwork,
     getArtworksByArtist: getArtworksByArtist,
     getArtworksByCategory: getArtworksByCategory,
+    sortArtworksByArtistLastName: sortArtworksByArtistLastName,
     searchArtworks: searchArtworks,
     getArtistList: getArtistList,
     getFeaturedArtwork: getFeaturedArtwork,
