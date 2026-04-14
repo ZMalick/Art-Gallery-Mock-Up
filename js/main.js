@@ -213,10 +213,10 @@
       }
     }
 
-    // Read category from URL param (from nav dropdown)
+    // Read category from URL param (from nav dropdown). No param = show All.
     var rawCat = getParam('category') || '';
-    var showAll = rawCat === 'all';
-    var currentCategory = showAll ? '' : (rawCat || 'painting');
+    var showAll = !rawCat || rawCat === 'all';
+    var currentCategory = showAll ? '' : rawCat;
 
     // Read artistId URL param — preselect artist filter if present
     var rawArtistId = getParam('artistId') || '';
@@ -224,15 +224,10 @@
       galleryArtistFilter.value = rawArtistId;
     }
 
-    // If URL has a specific category, set the matching pill active; otherwise default to first pill
+    // Set the matching pill active (All pill has empty data-category)
     pills.forEach(function (p) {
-      p.classList.toggle('active', !showAll && p.dataset.category === currentCategory);
+      p.classList.toggle('active', (p.dataset.category || '') === currentCategory);
     });
-    if (!rawCat) {
-      // No URL param: default to paintings, first pill stays active
-      var firstPill = pills[0];
-      if (firstPill) firstPill.classList.add('active');
-    }
 
     // If artistId param, clear category filter to show all of that artist's work
     if (rawArtistId) {
@@ -834,6 +829,8 @@
     var toggle = item.querySelector('.dropdown-toggle');
     if (!toggle) return;
     toggle.addEventListener('click', function (e) {
+      // Desktop: let the link navigate to gallery.html. Mobile/tablet: toggle the dropdown.
+      if (window.innerWidth > 1023) return;
       e.preventDefault();
       e.stopPropagation();
       var isOpen = item.classList.contains('open');
