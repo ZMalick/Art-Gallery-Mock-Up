@@ -69,8 +69,8 @@ Sticky dark nav, always visible:
 - If you think a QA skill (`a11y-audit`, `responsive-audit`, `perf-audit`, `seo-meta`) would benefit the work, confirm with the user first.
 
 ## Development Workflow
-- When making visual changes, take screenshots and compare against design intent
-- Do at least 2 visual comparison rounds before considering a page done
+- Visual changes: screenshot at 1280 AND 900 widths, compare against design intent; if a CSS fix doesn't show up, grep the selector globally — duplicate/stale rules are the usual cause
+- Large QA passes (10+ items): group into 5-10 batches, implement one at a time, wait for explicit user approval before moving on
 
 ## Hard Rules
 1. **No sales functionality** — no prices, no carts, no checkout, no "buy" buttons
@@ -82,4 +82,4 @@ Sticky dark nav, always visible:
 7. **Match existing code style** — IIFE modules, ES5-compatible patterns
 8. **Keep it clean and efficient** — no bloat, no unnecessary complexity
 9. **An artwork cannot exist without an artist** — always link artwork to its creator
-10. **This file must not exceed 85 lines** — do not add without removing first
+10. **Keep this file at or under 85 lines** when possible; 130 lines is the absolute cap — compress existing content before expanding
