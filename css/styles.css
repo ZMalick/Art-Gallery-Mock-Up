@@ -2854,6 +2854,14 @@ body[data-page="contact"] .page-hero .hero-subtitle {
   font-family: var(--font-body);
   margin-top: 1rem;
 }
+.form-error {
+  background: var(--coral);
+  color: var(--white);
+  padding: 1rem 1.25rem;
+  border-radius: 6px;
+  font-family: var(--font-body);
+  margin-top: 1rem;
+}
 /* ===== CARD DIMENSIONS ===== */
 .card-dimensions {
   font-size: 0.75rem;
