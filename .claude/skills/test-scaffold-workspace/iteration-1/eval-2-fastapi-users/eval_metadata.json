@@ -1,0 +1,5 @@
+{
+  "eval_id": 2,
+  "eval_name": "eval-2-fastapi-users",
+  "prompt": "Generate pytest tests for this FastAPI endpoint:\n\n```python\nfrom fastapi import APIRouter, HTTPException\nfrom pydantic import BaseModel, EmailStr\n\nrouter = APIRouter()\n\nclass UserCreate(BaseModel):\n    name: str\n    email: EmailStr\n    age: int | None = None\n\n@router.post(\"/users\", status_code=201)\nasync def create_user(user: UserCreate):\n    if await db.get_user_by_email(user.email):\n        raise HTTPException(409, \"Email already exists\")\n    return await db.create_user(user.dict())\n\n@router.get(\"/users/{user_id}\")\nasync def get_user(user_id: int):\n    user = await db.get_user(user_id)\n    if not user:\n        raise HTTPException(404, \"User not found\")\n    return user\n```"
+}

@@ -1,0 +1,15 @@
+{
+  "skill_name": "rest-api",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Create a REST API for a blog platform using Express + TypeScript. Resources: users (name, email, bio), posts (title, body, status: draft/published), comments (body, author). A user has many posts, a post has many comments.",
+      "expected_output": "Express TypeScript API with routes, controllers, validators (Zod), error handling, pagination, and OpenAPI spec for users, posts, comments"
+    },
+    {
+      "id": 2,
+      "prompt": "Scaffold a Flask REST API for a task management app. Resources: projects (name, description), tasks (title, description, priority: low/medium/high, status: todo/in_progress/done, due_date). A project has many tasks.",
+      "expected_output": "Flask API with blueprints, marshmallow/pydantic validation, error handlers, pagination, and OpenAPI spec"
+    }
+  ]
+}

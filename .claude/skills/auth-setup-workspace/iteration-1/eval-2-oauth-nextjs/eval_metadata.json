@@ -1,0 +1,5 @@
+{
+  "eval_id": 2,
+  "eval_name": "oauth-nextjs",
+  "prompt": "Add Google and GitHub OAuth login to my Next.js app using NextAuth.js. Users should be created in the database on first login. I also need a way to protect API routes and pages."
+}

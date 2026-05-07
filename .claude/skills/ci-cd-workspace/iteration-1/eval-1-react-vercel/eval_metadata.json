@@ -1,0 +1,5 @@
+{
+  "eval_id": 1,
+  "eval_name": "eval-1-react-vercel",
+  "prompt": "Set up GitHub Actions for my TypeScript React project. I need: lint with ESLint, type check, run Vitest tests with coverage, build, and deploy to Vercel on push to main. PRs should only run lint+test+build."
+}

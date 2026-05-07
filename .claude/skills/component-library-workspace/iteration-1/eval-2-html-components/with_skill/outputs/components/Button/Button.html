@@ -1,0 +1,61 @@
+<!--
+  Button Component
+  =================
+  Variants: primary | secondary | outline | ghost
+  Sizes:    sm | md | lg
+  States:   disabled | loading
+
+  Accessibility:
+  - Uses native <button> element (implicit role="button")
+  - Keyboard activation via Enter / Space (native behaviour)
+  - Disabled state uses aria-disabled="true" alongside the disabled attribute
+  - Loading state uses aria-busy="true" and a visually-hidden live region
+  - Visible focus ring via :focus-visible
+-->
+
+<!-- Primary (default) — Medium -->
+<button class="btn btn--primary btn--md" type="button">
+  Primary Button
+</button>
+
+<!-- Secondary — Medium -->
+<button class="btn btn--secondary btn--md" type="button">
+  Secondary Button
+</button>
+
+<!-- Outline — Medium -->
+<button class="btn btn--outline btn--md" type="button">
+  Outline Button
+</button>
+
+<!-- Ghost — Medium -->
+<button class="btn btn--ghost btn--md" type="button">
+  Ghost Button
+</button>
+
+<!-- Small Size -->
+<button class="btn btn--primary btn--sm" type="button">
+  Small
+</button>
+
+<!-- Large Size -->
+<button class="btn btn--primary btn--lg" type="button">
+  Large
+</button>
+
+<!-- Disabled -->
+<button class="btn btn--primary btn--md" type="button" disabled aria-disabled="true">
+  Disabled
+</button>
+
+<!-- Loading -->
+<button class="btn btn--primary btn--md btn--loading" type="button" aria-busy="true" aria-label="Saving, please wait">
+  Save
+  <span class="btn__spinner" aria-hidden="true"></span>
+</button>
+
+<!-- With Leading Icon (slot pattern — drop any SVG / icon font span) -->
+<button class="btn btn--primary btn--md" type="button">
+  <span class="btn__icon" aria-hidden="true">&#x2795;</span>
+  Add Item
+</button>

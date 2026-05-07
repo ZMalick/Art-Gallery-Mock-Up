@@ -1,0 +1,15 @@
+{
+  "skill_name": "seo-meta",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Add SEO meta tags, Open Graph, and JSON-LD structured data to this Next.js page. It's a blog post page:\n\n```tsx\nexport default function BlogPost({ post }) {\n  return (\n    <article>\n      <h1>{post.title}</h1>\n      <p>By {post.author.name} on {post.date}</p>\n      <img src={post.coverImage} />\n      <div dangerouslySetInnerHTML={{ __html: post.content }} />\n    </article>\n  );\n}\n```\n\nThe site is called 'DevBlog' at https://devblog.example.com",
+      "expected_output": "Next.js metadata export with title, description, Open Graph, Twitter card, JSON-LD BlogPosting structured data, canonical URL"
+    },
+    {
+      "id": 2,
+      "prompt": "Audit the SEO of this plain HTML page and fix everything:\n\n```html\n<html>\n<head><title>Home</title></head>\n<body>\n  <img src=\"logo.png\">\n  <h1>Welcome to TechShop</h1>\n  <h3>Best products for developers</h3>\n  <a href=\"/sale\">Click here</a> for our sale!\n  <div class=\"products\">\n    <div><img src=\"p1.jpg\"><p>Mechanical Keyboard - $89</p></div>\n    <div><img src=\"p2.jpg\"><p>USB-C Hub - $45</p></div>\n  </div>\n  <a href=\"/about\">Read more</a>\n</body>\n</html>\n```",
+      "expected_output": "Audit finding: missing lang, generic title, no meta description, no OG tags, no structured data, missing alt text, non-descriptive links, heading skip, no canonical. Fixed HTML with everything added."
+    }
+  ]
+}

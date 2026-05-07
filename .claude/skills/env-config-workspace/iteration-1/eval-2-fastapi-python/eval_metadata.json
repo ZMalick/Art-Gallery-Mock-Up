@@ -1,0 +1,5 @@
+{
+  "eval_id": 2,
+  "eval_name": "eval-2-fastapi-python",
+  "prompt": "I have a Python FastAPI project that needs proper env management. Variables: DATABASE_URL, REDIS_URL, SECRET_KEY, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, S3_BUCKET, DEBUG, ALLOWED_HOSTS. Set it up with pydantic."
+}

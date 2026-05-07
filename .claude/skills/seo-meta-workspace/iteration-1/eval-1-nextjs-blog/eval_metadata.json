@@ -1,0 +1,5 @@
+{
+  "eval_id": 1,
+  "eval_name": "nextjs-blog",
+  "prompt": "Add SEO meta tags, Open Graph, and JSON-LD structured data to this Next.js page. It's a blog post page:\n\n```tsx\nexport default function BlogPost({ post }) {\n  return (\n    <article>\n      <h1>{post.title}</h1>\n      <p>By {post.author.name} on {post.date}</p>\n      <img src={post.coverImage} />\n      <div dangerouslySetInnerHTML={{ __html: post.content }} />\n    </article>\n  );\n}\n```\n\nThe site is called 'DevBlog' at https://devblog.example.com"
+}

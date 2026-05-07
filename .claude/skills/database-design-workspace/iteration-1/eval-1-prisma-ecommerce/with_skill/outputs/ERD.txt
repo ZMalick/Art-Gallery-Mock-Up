@@ -1,0 +1,99 @@
+E-Commerce Database - Entity Relationship Diagram
+===================================================
+
+User
+  id              UUID PK
+  email           VARCHAR(255) UNIQUE
+  name            VARCHAR(100)
+  passwordHash    TEXT
+  phone           VARCHAR(20)
+  createdAt       TIMESTAMPTZ
+  updatedAt       TIMESTAMPTZ
+
+Address
+  id              UUID PK
+  userId          UUID FK -> User.id
+  label           VARCHAR(50)          -- e.g. "Home", "Work"
+  street          VARCHAR(255)
+  city            VARCHAR(100)
+  state           VARCHAR(100)
+  postalCode      VARCHAR(20)
+  country         VARCHAR(100)
+  isDefault       BOOLEAN DEFAULT false
+  createdAt       TIMESTAMPTZ
+  updatedAt       TIMESTAMPTZ
+
+Category
+  id              UUID PK
+  name            VARCHAR(100) UNIQUE
+  slug            VARCHAR(100) UNIQUE
+  description     TEXT
+  parentId        UUID FK -> Category.id (nullable, self-referencing)
+  createdAt       TIMESTAMPTZ
+  updatedAt       TIMESTAMPTZ
+
+Product
+  id              UUID PK
+  name            VARCHAR(200)
+  slug            VARCHAR(200) UNIQUE
+  description     TEXT
+  basePrice       DECIMAL(10,2)
+  categoryId      UUID FK -> Category.id
+  isActive        BOOLEAN DEFAULT true
+  createdAt       TIMESTAMPTZ
+  updatedAt       TIMESTAMPTZ
+
+ProductVariant
+  id              UUID PK
+  productId       UUID FK -> Product.id
+  sku             VARCHAR(100) UNIQUE
+  size            VARCHAR(50)
+  color           VARCHAR(50)
+  priceOverride   DECIMAL(10,2) (nullable)
+  stock           INT DEFAULT 0
+  createdAt       TIMESTAMPTZ
+  updatedAt       TIMESTAMPTZ
+
+Order
+  id              UUID PK
+  userId          UUID FK -> User.id
+  status          ENUM(PENDING, CONFIRMED, SHIPPED, DELIVERED, CANCELLED)
+  shippingAddressId UUID FK -> Address.id
+  totalAmount     DECIMAL(12,2)
+  createdAt       TIMESTAMPTZ
+  updatedAt       TIMESTAMPTZ
+
+OrderItem
+  id              UUID PK
+  orderId         UUID FK -> Order.id
+  variantId       UUID FK -> ProductVariant.id
+  quantity        INT
+  unitPrice       DECIMAL(10,2)
+  createdAt       TIMESTAMPTZ
+
+Relationships
+=============
+User       1 --- * Address         (a user has many addresses)
+User       1 --- * Order           (a user has many orders)
+Category   1 --- * Product         (a category has many products)
+Category   1 --- * Category        (self-referencing: parent/child categories)
+Product    1 --- * ProductVariant  (a product has many variants)
+Order      1 --- * OrderItem       (an order has many items)
+ProductVariant 1 --- * OrderItem   (a variant appears in many order items)
+Address    1 --- * Order           (an address is used in many orders)
+
+Indexes
+=======
+- User.email (UNIQUE)
+- Address.userId
+- Category.slug (UNIQUE)
+- Category.parentId
+- Product.slug (UNIQUE)
+- Product.categoryId
+- ProductVariant.productId
+- ProductVariant.sku (UNIQUE)
+- Order.userId
+- Order.status
+- Order.shippingAddressId
+- OrderItem.orderId
+- OrderItem.variantId

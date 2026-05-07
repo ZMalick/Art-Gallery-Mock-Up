@@ -1,0 +1,5 @@
+{
+  "eval_id": 1,
+  "eval_name": "eval-1-static-page",
+  "prompt": "Audit this page for responsive issues and fix them:\n\n```html\n<div style=\"width: 960px; margin: 0 auto;\">\n  <nav style=\"display: flex; gap: 20px;\">\n    <a href=\"/\">Home</a><a href=\"/about\">About</a><a href=\"/contact\">Contact</a>\n  </nav>\n  <div style=\"display: flex; gap: 30px;\">\n    <main style=\"width: 640px;\">\n      <h1 style=\"font-size: 42px;\">Welcome</h1>\n      <p style=\"font-size: 14px; line-height: 1.2;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\n      <img src=\"hero.jpg\" style=\"width: 640px;\">\n      <button style=\"padding: 5px 8px; font-size: 11px;\">Click me</button>\n    </main>\n    <aside style=\"width: 280px;\">Sidebar content</aside>\n  </div>\n</div>\n```"
+}

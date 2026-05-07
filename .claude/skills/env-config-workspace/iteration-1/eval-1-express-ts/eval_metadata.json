@@ -1,0 +1,5 @@
+{
+  "eval_id": 1,
+  "eval_name": "eval-1-express-ts",
+  "prompt": "Set up environment configuration for my Express + TypeScript app. I need: DATABASE_URL, JWT_SECRET, STRIPE_SECRET_KEY, SENDGRID_API_KEY, PORT, NODE_ENV. I want typed config with validation that fails fast on startup."
+}

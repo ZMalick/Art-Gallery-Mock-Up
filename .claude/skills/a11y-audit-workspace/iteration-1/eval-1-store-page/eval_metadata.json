@@ -1,0 +1,5 @@
+{
+  "eval_id": 1,
+  "eval_name": "store-page",
+  "prompt": "Audit this page for accessibility issues and fix them:\n\n```html\n<html>\n<body>\n  <div class=\"nav\"><a href=\"/\"><img src=\"logo.png\"></a> <a href=\"/products\">Products</a> <a href=\"/about\">About</a></div>\n  <div class=\"hero\"><div style=\"color: #999; background: #fff; font-size: 14px;\">Welcome to our store</div></div>\n  <div class=\"products\">\n    <h3>Featured Products</h3>\n    <div onclick=\"window.location='/product/1'\" style=\"cursor:pointer\">\n      <img src=\"product1.jpg\"><span>Cool Widget</span><span>$29.99</span>\n    </div>\n  </div>\n  <div class=\"newsletter\">\n    <h4>Subscribe</h4>\n    <input type=\"email\" placeholder=\"Your email\"><div onclick=\"subscribe()\" style=\"background:blue;color:white;padding:5px 10px;display:inline-block;cursor:pointer\">Subscribe</div>\n  </div>\n</body>\n</html>\n```"
+}

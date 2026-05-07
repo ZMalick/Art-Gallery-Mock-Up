@@ -1,0 +1,5 @@
+{
+  "eval_id": 1,
+  "eval_name": "express-blog",
+  "prompt": "Create a REST API for a blog platform using Express + TypeScript. Resources: users (name, email, bio), posts (title, body, status: draft/published), comments (body, author). A user has many posts, a post has many comments."
+}

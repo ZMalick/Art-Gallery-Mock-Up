@@ -1,0 +1,15 @@
+{
+  "skill_name": "database-design",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Design a database for an e-commerce store using Prisma. I need users, products (with categories), orders, and order items. Users can have multiple addresses. Products have variants (size, color) with separate stock tracking.",
+      "expected_output": "Prisma schema with User, Product, Category, ProductVariant, Order, OrderItem, Address models with proper relationships, indexes, and migration"
+    },
+    {
+      "id": 2,
+      "prompt": "I need a SQLAlchemy schema for a social media app. Users can create posts, follow other users, like posts, and comment on posts. Posts can have multiple images/media attachments.",
+      "expected_output": "SQLAlchemy models with User, Post, Comment, Like, Follow, Media models, proper relationships, junction tables, and migration"
+    }
+  ]
+}

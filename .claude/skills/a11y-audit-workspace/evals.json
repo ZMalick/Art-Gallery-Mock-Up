@@ -1,0 +1,15 @@
+{
+  "skill_name": "a11y-audit",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Audit this page for accessibility issues and fix them:\n\n```html\n<html>\n<body>\n  <div class=\"nav\"><a href=\"/\"><img src=\"logo.png\"></a> <a href=\"/products\">Products</a> <a href=\"/about\">About</a></div>\n  <div class=\"hero\"><div style=\"color: #999; background: #fff; font-size: 14px;\">Welcome to our store</div></div>\n  <div class=\"products\">\n    <h3>Featured Products</h3>\n    <div onclick=\"window.location='/product/1'\" style=\"cursor:pointer\">\n      <img src=\"product1.jpg\"><span>Cool Widget</span><span>$29.99</span>\n    </div>\n  </div>\n  <div class=\"newsletter\">\n    <h4>Subscribe</h4>\n    <input type=\"email\" placeholder=\"Your email\"><div onclick=\"subscribe()\" style=\"background:blue;color:white;padding:5px 10px;display:inline-block;cursor:pointer\">Subscribe</div>\n  </div>\n</body>\n</html>\n```",
+      "expected_output": "Audit finding: missing lang, no semantic HTML, missing alt text, low contrast, div-as-button, no form labels, no keyboard access, heading hierarchy issues. Fixed code with all issues resolved."
+    },
+    {
+      "id": 2,
+      "prompt": "Check this React modal component for accessibility:\n\n```tsx\nconst Modal = ({ isOpen, onClose, children }) => {\n  if (!isOpen) return null;\n  return (\n    <div style={{position:'fixed',top:0,left:0,right:0,bottom:0,background:'rgba(0,0,0,0.5)',display:'flex',alignItems:'center',justifyContent:'center'}} onClick={onClose}>\n      <div style={{background:'white',padding:'20px',borderRadius:'8px',maxWidth:'500px'}} onClick={e=>e.stopPropagation()}>\n        <span style={{cursor:'pointer',float:'right'}} onClick={onClose}>X</span>\n        {children}\n      </div>\n    </div>\n  );\n};\n```",
+      "expected_output": "Audit finding: no role=dialog, no aria-modal, no focus trap, no Escape key handling, close button not a real button, no aria-label, no focus return. Fixed component."
+    }
+  ]
+}

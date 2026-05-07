@@ -1,0 +1,15 @@
+{
+  "skill_name": "auth-setup",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Set up JWT authentication for my Express + TypeScript app. I need register, login, logout, and refresh token endpoints. Use bcrypt for passwords. Add role-based access control with admin and user roles.",
+      "expected_output": "Auth routes, middleware, JWT helpers, password hashing, RBAC middleware, .env.example, all with secure defaults"
+    },
+    {
+      "id": 2,
+      "prompt": "Add Google and GitHub OAuth login to my Next.js app using NextAuth.js. Users should be created in the database on first login. I also need a way to protect API routes and pages.",
+      "expected_output": "NextAuth config with Google+GitHub providers, session handling, protected route middleware, database adapter setup"
+    }
+  ]
+}

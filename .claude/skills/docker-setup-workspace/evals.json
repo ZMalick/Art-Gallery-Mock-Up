@@ -1,0 +1,15 @@
+{
+  "skill_name": "docker-setup",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Dockerize my Node.js Express app. I also need PostgreSQL and Redis. Give me both dev and production configs. The app runs on port 3000 and uses npm.",
+      "expected_output": "Multi-stage Dockerfile, docker-compose.yml (dev with hot reload), docker-compose.prod.yml, .dockerignore, with Postgres and Redis services"
+    },
+    {
+      "id": 2,
+      "prompt": "I have a Python FastAPI app that needs Docker setup. It uses PostgreSQL for the database and Celery with RabbitMQ for background tasks. Set up both dev and production.",
+      "expected_output": "Dockerfile with Python slim base, docker-compose with FastAPI, Postgres, RabbitMQ, Celery worker services, dev and prod configs"
+    }
+  ]
+}

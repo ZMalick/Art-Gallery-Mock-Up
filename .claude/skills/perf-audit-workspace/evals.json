@@ -1,0 +1,15 @@
+{
+  "skill_name": "perf-audit",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Audit this React component for performance issues:\n\n```tsx\nimport moment from 'moment';\nimport _ from 'lodash';\n\nconst UserList = ({ users, searchTerm, onSelectUser }) => {\n  const filtered = _.filter(users, u => u.name.toLowerCase().includes(searchTerm.toLowerCase()));\n  const sorted = _.sortBy(filtered, 'name');\n\n  return (\n    <div>\n      {sorted.map(user => (\n        <div key={user.id} onClick={() => onSelectUser(user)} style={{padding:'12px',borderBottom:'1px solid #eee'}}>\n          <img src={user.avatar} style={{width:'40px',height:'40px',borderRadius:'50%'}} />\n          <span>{user.name}</span>\n          <span>{moment(user.lastActive).fromNow()}</span>\n        </div>\n      ))}\n    </div>\n  );\n};\n```\n\nThe list has about 5000 users and it's super laggy when typing in search.",
+      "expected_output": "Audit finding: full lodash import, moment.js, no memoization, no virtualization for 5000 items, inline callbacks, no debounced search. Fixes with lighter alternatives and virtualization."
+    },
+    {
+      "id": 2,
+      "prompt": "My Next.js page loads slowly. Here's the component:\n\n```tsx\nimport axios from 'axios';\nimport { Chart } from 'chart.js/auto';\n\nexport default function Dashboard() {\n  const [data, setData] = useState(null);\n  useEffect(() => {\n    axios.get('/api/analytics').then(res => setData(res.data));\n    axios.get('/api/users').then(res => setUsers(res.data));\n    axios.get('/api/revenue').then(res => setRevenue(res.data));\n  }, []);\n\n  return (\n    <div>\n      <img src=\"/banner.png\" />\n      <img src=\"/team-photo.jpg\" />\n      {data && <canvas ref={chartRef} />}\n      {/* renders 500 table rows */}\n      <table>{users?.map(u => <tr key={u.id}><td>{u.name}</td><td>{u.email}</td></tr>)}</table>\n    </div>\n  );\n}\n```",
+      "expected_output": "Audit finding: axios bloat, chart.js full bundle, no lazy loading, waterfall API requests, images without dimensions/lazy, no virtualized table. Fixes."
+    }
+  ]
+}

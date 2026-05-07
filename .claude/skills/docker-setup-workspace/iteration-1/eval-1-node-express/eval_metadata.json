@@ -1,0 +1,5 @@
+{
+  "eval_id": 1,
+  "eval_name": "eval-1-node-express",
+  "prompt": "Dockerize my Node.js Express app. I also need PostgreSQL and Redis. Give me both dev and production configs. The app runs on port 3000 and uses npm."
+}

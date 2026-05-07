@@ -1,0 +1,5 @@
+{
+  "eval_id": 2,
+  "eval_name": "html-store",
+  "prompt": "Audit the SEO of this plain HTML page and fix everything:\n\n```html\n<html>\n<head><title>Home</title></head>\n<body>\n  <img src=\"logo.png\">\n  <h1>Welcome to TechShop</h1>\n  <h3>Best products for developers</h3>\n  <a href=\"/sale\">Click here</a> for our sale!\n  <div class=\"products\">\n    <div><img src=\"p1.jpg\"><p>Mechanical Keyboard - $89</p></div>\n    <div><img src=\"p2.jpg\"><p>USB-C Hub - $45</p></div>\n  </div>\n  <a href=\"/about\">Read more</a>\n</body>\n</html>\n```"
+}

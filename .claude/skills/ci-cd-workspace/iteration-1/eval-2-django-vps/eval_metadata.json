@@ -1,0 +1,5 @@
+{
+  "eval_id": 2,
+  "eval_name": "eval-2-django-vps",
+  "prompt": "Create a GitHub Actions pipeline for my Python Django app. It should run ruff linting, pytest with PostgreSQL service container, and deploy to a VPS via SSH on push to main."
+}

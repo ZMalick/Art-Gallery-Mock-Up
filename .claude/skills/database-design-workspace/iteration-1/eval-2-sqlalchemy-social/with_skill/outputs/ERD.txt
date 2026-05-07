@@ -1,0 +1,74 @@
+================================================================================
+                     SOCIAL MEDIA APP — Entity Relationship Diagram
+================================================================================
+
+User
+  id              UUID PK
+  username        VARCHAR(50) UNIQUE
+  email           VARCHAR(255) UNIQUE
+  display_name    VARCHAR(100)
+  bio             TEXT NULLABLE
+  avatar_url      VARCHAR(500) NULLABLE
+  created_at      TIMESTAMPTZ
+  updated_at      TIMESTAMPTZ
+
+Post
+  id              UUID PK
+  user_id         UUID FK -> User.id
+  body            TEXT
+  created_at      TIMESTAMPTZ
+  updated_at      TIMESTAMPTZ
+
+Comment
+  id              UUID PK
+  user_id         UUID FK -> User.id
+  post_id         UUID FK -> Post.id
+  body            TEXT
+  created_at      TIMESTAMPTZ
+  updated_at      TIMESTAMPTZ
+
+Like
+  id              UUID PK
+  user_id         UUID FK -> User.id
+  post_id         UUID FK -> Post.id
+  created_at      TIMESTAMPTZ
+  UNIQUE(user_id, post_id)
+
+Follow (junction table)
+  id              UUID PK
+  follower_id     UUID FK -> User.id
+  following_id    UUID FK -> User.id
+  created_at      TIMESTAMPTZ
+  UNIQUE(follower_id, following_id)
+
+Media
+  id              UUID PK
+  post_id         UUID FK -> Post.id
+  url             VARCHAR(500)
+  media_type      ENUM('image', 'video', 'gif') DEFAULT 'image'
+  alt_text        VARCHAR(500) NULLABLE
+  position        INTEGER DEFAULT 0
+  created_at      TIMESTAMPTZ
+
+================================================================================
+                              Relationships
+================================================================================
+
+User    1 ──< N  Post        (user_id)        One user has many posts
+User    1 ──< N  Comment     (user_id)        One user has many comments
+User    1 ──< N  Like        (user_id)        One user has many likes
+Post    1 ──< N  Comment     (post_id)        One post has many comments
+Post    1 ──< N  Like        (post_id)        One post has many likes
+Post    1 ──< N  Media       (post_id)        One post has many media attachments
+User    N >──< N User        via Follow       Many-to-many self-referential follow
+
+================================================================================
+                              Indexes
+================================================================================
+
+users:      UNIQUE(username), UNIQUE(email)
+posts:      INDEX(user_id), INDEX(created_at DESC)
+comments:   INDEX(user_id), INDEX(post_id), INDEX(created_at DESC)
+likes:      INDEX(user_id), INDEX(post_id), UNIQUE(user_id, post_id)
+follows:    INDEX(follower_id), INDEX(following_id), UNIQUE(follower_id, following_id)
+media:      INDEX(post_id)

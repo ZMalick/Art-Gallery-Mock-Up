@@ -1,0 +1,15 @@
+{
+  "skill_name": "ci-cd",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Set up GitHub Actions for my TypeScript React project. I need: lint with ESLint, type check, run Vitest tests with coverage, build, and deploy to Vercel on push to main. PRs should only run lint+test+build.",
+      "expected_output": "CI workflow with parallel lint/typecheck/test jobs, build job, and CD workflow for Vercel deploy on main"
+    },
+    {
+      "id": 2,
+      "prompt": "Create a GitHub Actions pipeline for my Python Django app. It should run ruff linting, pytest with PostgreSQL service container, and deploy to a VPS via SSH on push to main.",
+      "expected_output": "CI workflow with ruff, pytest using Postgres service, and CD workflow with SSH deploy"
+    }
+  ]
+}

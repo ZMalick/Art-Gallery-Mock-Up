@@ -1,0 +1,5 @@
+{
+  "eval_id": 2,
+  "eval_name": "eval-2-python-fastapi",
+  "prompt": "I have a Python FastAPI app that needs Docker setup. It uses PostgreSQL for the database and Celery with RabbitMQ for background tasks. Set up both dev and production."
+}

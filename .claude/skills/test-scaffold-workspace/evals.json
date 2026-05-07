@@ -1,0 +1,15 @@
+{
+  "skill_name": "test-scaffold",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Write tests for this React component using Vitest and Testing Library:\n\n```tsx\ninterface ButtonProps {\n  variant?: 'primary' | 'secondary' | 'danger';\n  size?: 'sm' | 'md' | 'lg';\n  disabled?: boolean;\n  loading?: boolean;\n  onClick?: () => void;\n  children: React.ReactNode;\n}\n\nexport const Button = ({ variant = 'primary', size = 'md', disabled, loading, onClick, children }: ButtonProps) => (\n  <button\n    className={`btn btn-${variant} btn-${size}`}\n    disabled={disabled || loading}\n    onClick={onClick}\n    aria-busy={loading}\n  >\n    {loading ? <span className=\"spinner\" /> : children}\n  </button>\n);\n```",
+      "expected_output": "Vitest test file with tests for rendering, all variants, sizes, click handler, disabled state, loading state, accessibility attributes"
+    },
+    {
+      "id": 2,
+      "prompt": "Generate pytest tests for this FastAPI endpoint:\n\n```python\nfrom fastapi import APIRouter, HTTPException\nfrom pydantic import BaseModel, EmailStr\n\nrouter = APIRouter()\n\nclass UserCreate(BaseModel):\n    name: str\n    email: EmailStr\n    age: int | None = None\n\n@router.post(\"/users\", status_code=201)\nasync def create_user(user: UserCreate):\n    if await db.get_user_by_email(user.email):\n        raise HTTPException(409, \"Email already exists\")\n    return await db.create_user(user.dict())\n\n@router.get(\"/users/{user_id}\")\nasync def get_user(user_id: int):\n    user = await db.get_user(user_id)\n    if not user:\n        raise HTTPException(404, \"User not found\")\n    return user\n```",
+      "expected_output": "Pytest test file with tests for creating user (valid/invalid), duplicate email 409, get user success, get user 404, validation errors"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"eval_id": 2, "eval_name": "flask-tasks", "prompt": "Scaffold a Flask REST API for a task management app. Resources: projects (name, description), tasks (title, description, priority: low/medium/high, status: todo/in_progress/done, due_date). A project has many tasks."}

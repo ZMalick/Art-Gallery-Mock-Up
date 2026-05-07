@@ -1,0 +1,119 @@
+/* ==========================================================================
+   Card Component — Styles (BEM)
+   Variants: elevated, outlined, flat
+   Slots: header, body, footer
+   ========================================================================== */
+
+/* ---------- Base ---------- */
+.card {
+  font-family: var(--font-family-base);
+  color: var(--color-neutral-900);
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow var(--transition-base),
+    border-color var(--transition-base);
+}
+
+/* ---------- Focus ring for interactive cards ---------- */
+.card:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.card:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ==========================================================================
+   Variants
+   ========================================================================== */
+
+/* Elevated — drop shadow, no visible border */
+.card--elevated {
+  border: 1px solid transparent;
+  box-shadow: var(--shadow-md);
+}
+
+.card--elevated:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Outlined — visible border, no shadow */
+.card--outlined {
+  border: 2px solid var(--color-neutral-200);
+  box-shadow: none;
+}
+
+.card--outlined:hover {
+  border-color: var(--color-neutral-300);
+}
+
+/* Flat — no border, no shadow */
+.card--flat {
+  border: 1px solid transparent;
+  box-shadow: none;
+  background-color: var(--color-neutral-50);
+}
+
+/* ==========================================================================
+   Slots
+   ========================================================================== */
+.card__header {
+  padding: var(--space-4) var(--space-4) var(--space-2);
+}
+
+.card__header-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  margin: 0;
+  color: var(--color-neutral-900);
+}
+
+.card__header-subtitle {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-neutral-500);
+  margin: var(--space-1) 0 0;
+  line-height: var(--line-height-normal);
+}
+
+.card__body {
+  padding: var(--space-2) var(--space-4);
+  flex: 1;
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-neutral-700);
+}
+
+.card__footer {
+  padding: var(--space-2) var(--space-4) var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* Optional image at the top of the card */
+.card__media {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   Interactive Card (clickable)
+   ========================================================================== */
+a.card,
+.card--interactive {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+a.card:hover,
+.card--interactive:hover {
+  box-shadow: var(--shadow-lg);
+}

@@ -1,0 +1,1 @@
+{"eval_id": 2, "eval_name": "sqlalchemy-social", "prompt": "I need a SQLAlchemy schema for a social media app. Users can create posts, follow other users, like posts, and comment on posts. Posts can have multiple images/media attachments."}

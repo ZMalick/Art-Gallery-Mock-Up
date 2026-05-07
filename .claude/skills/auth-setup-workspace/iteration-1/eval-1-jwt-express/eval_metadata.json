@@ -1,0 +1,5 @@
+{
+  "eval_id": 1,
+  "eval_name": "jwt-express",
+  "prompt": "Set up JWT authentication for my Express + TypeScript app. I need register, login, logout, and refresh token endpoints. Use bcrypt for passwords. Add role-based access control with admin and user roles."
+}

@@ -1,0 +1,72 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# Cancel in-progress runs on new push
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Lint with Ruff
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - run: pip install ruff
+
+      # Run both linting and format checking
+      - name: Run Ruff linter
+        run: ruff check .
+
+      - name: Run Ruff format check
+        run: ruff format --check .
+
+  test:
+    name: Test with pytest
+    runs-on: ubuntu-latest
+
+    # PostgreSQL service container for integration tests
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: test_db
+        ports:
+          - 5432:5432
+        # Health check to wait until Postgres is ready
+        options: >-
+          --health-cmd="pg_isready -U postgres"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run tests with pytest
+        run: pytest --tb=short -q
+        env:
+          DATABASE_URL: postgres://postgres:postgres@localhost:5432/test_db
+          DJANGO_SETTINGS_MODULE: config.settings.test
+          SECRET_KEY: test-secret-key-for-ci-only

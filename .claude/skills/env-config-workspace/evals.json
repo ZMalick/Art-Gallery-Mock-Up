@@ -1,0 +1,15 @@
+{
+  "skill_name": "env-config",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Set up environment configuration for my Express + TypeScript app. I need: DATABASE_URL, JWT_SECRET, STRIPE_SECRET_KEY, SENDGRID_API_KEY, PORT, NODE_ENV. I want typed config with validation that fails fast on startup.",
+      "expected_output": ".env.example with all vars documented, Zod-based config.ts with validation, updated .gitignore"
+    },
+    {
+      "id": 2,
+      "prompt": "I have a Python FastAPI project that needs proper env management. Variables: DATABASE_URL, REDIS_URL, SECRET_KEY, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, S3_BUCKET, DEBUG, ALLOWED_HOSTS. Set it up with pydantic.",
+      "expected_output": ".env.example, pydantic Settings class with validation, proper .gitignore entries"
+    }
+  ]
+}

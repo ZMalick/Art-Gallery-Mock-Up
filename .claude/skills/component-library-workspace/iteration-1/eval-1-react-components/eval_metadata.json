@@ -1,0 +1,5 @@
+{
+  "eval_id": 1,
+  "eval_name": "react-components",
+  "prompt": "I need a React component library with TypeScript. Start with Button, Modal, and Card components. Use CSS Modules for styling. I want a dark/light theme system with design tokens."
+}

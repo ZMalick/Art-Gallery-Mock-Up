@@ -1,0 +1,5 @@
+{
+  "eval_id": 2,
+  "eval_name": "react-modal",
+  "prompt": "Check this React modal component for accessibility:\n\n```tsx\nconst Modal = ({ isOpen, onClose, children }) => {\n  if (!isOpen) return null;\n  return (\n    <div style={{position:'fixed',top:0,left:0,right:0,bottom:0,background:'rgba(0,0,0,0.5)',display:'flex',alignItems:'center',justifyContent:'center'}} onClick={onClose}>\n      <div style={{background:'white',padding:'20px',borderRadius:'8px',maxWidth:'500px'}} onClick={e=>e.stopPropagation()}>\n        <span style={{cursor:'pointer',float:'right'}} onClick={onClose}>X</span>\n        {children}\n      </div>\n    </div>\n  );\n};\n```"
+}

@@ -1,0 +1,22 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Example Blog Post Title",
+  "description": "A compelling summary of the blog post content, limited to 155 characters for optimal display in search results.",
+  "image": "https://devblog.example.com/images/example-cover.jpg",
+  "datePublished": "2026-01-15T09:00:00Z",
+  "dateModified": "2026-01-16T12:00:00Z",
+  "author": {
+    "@type": "Person",
+    "name": "Jane Doe"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DevBlog",
+    "url": "https://devblog.example.com"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://devblog.example.com/blog/example-post"
+  }
+}

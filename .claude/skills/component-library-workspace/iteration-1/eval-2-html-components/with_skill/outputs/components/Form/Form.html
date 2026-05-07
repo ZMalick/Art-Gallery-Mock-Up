@@ -1,0 +1,188 @@
+<!--
+  Form Components
+  ================
+  Sub-components: FormGroup, Label, Input, Select, Textarea
+  States: error, disabled, required, helperText
+
+  Accessibility:
+  - Every <input>/<select>/<textarea> has an associated <label> via `for`/`id`
+  - Required fields use aria-required="true" and the .form-label--required class
+  - Error state uses aria-invalid="true" and aria-describedby pointing to error text
+  - Helper text linked via aria-describedby
+  - Disabled controls use native disabled attribute
+-->
+
+<!-- ====================================================================
+     Text Input — Default
+     ==================================================================== -->
+<div class="form-group">
+  <label class="form-label" for="input-name">Full Name</label>
+  <input
+    class="form-input"
+    type="text"
+    id="input-name"
+    name="name"
+    placeholder="Jane Doe"
+    aria-describedby="input-name-helper"
+  />
+  <span class="form-helper" id="input-name-helper">
+    Enter your legal full name.
+  </span>
+</div>
+
+<!-- ====================================================================
+     Text Input — Required
+     ==================================================================== -->
+<div class="form-group">
+  <label class="form-label form-label--required" for="input-email">
+    Email Address
+  </label>
+  <input
+    class="form-input"
+    type="email"
+    id="input-email"
+    name="email"
+    placeholder="jane@example.com"
+    required
+    aria-required="true"
+  />
+</div>
+
+<!-- ====================================================================
+     Text Input — Error
+     ==================================================================== -->
+<div class="form-group">
+  <label class="form-label form-label--required" for="input-email-error">
+    Email Address
+  </label>
+  <input
+    class="form-input form-input--error"
+    type="email"
+    id="input-email-error"
+    name="email"
+    value="not-an-email"
+    required
+    aria-required="true"
+    aria-invalid="true"
+    aria-describedby="input-email-error-msg"
+  />
+  <span class="form-error" id="input-email-error-msg" role="alert">
+    Please enter a valid email address.
+  </span>
+</div>
+
+<!-- ====================================================================
+     Text Input — Disabled
+     ==================================================================== -->
+<div class="form-group">
+  <label class="form-label" for="input-disabled">Username</label>
+  <input
+    class="form-input"
+    type="text"
+    id="input-disabled"
+    name="username"
+    value="janedoe"
+    disabled
+  />
+</div>
+
+<!-- ====================================================================
+     Select — Default
+     ==================================================================== -->
+<div class="form-group">
+  <label class="form-label" for="select-country">Country</label>
+  <select class="form-select" id="select-country" name="country">
+    <option value="" disabled selected>Choose a country</option>
+    <option value="us">United States</option>
+    <option value="ca">Canada</option>
+    <option value="uk">United Kingdom</option>
+    <option value="au">Australia</option>
+  </select>
+</div>
+
+<!-- ====================================================================
+     Select — Required + Error
+     ==================================================================== -->
+<div class="form-group">
+  <label class="form-label form-label--required" for="select-role">
+    Role
+  </label>
+  <select
+    class="form-select form-select--error"
+    id="select-role"
+    name="role"
+    required
+    aria-required="true"
+    aria-invalid="true"
+    aria-describedby="select-role-error"
+  >
+    <option value="" disabled selected>Select a role</option>
+    <option value="admin">Admin</option>
+    <option value="editor">Editor</option>
+    <option value="viewer">Viewer</option>
+  </select>
+  <span class="form-error" id="select-role-error" role="alert">
+    Please select a role.
+  </span>
+</div>
+
+<!-- ====================================================================
+     Select — Disabled
+     ==================================================================== -->
+<div class="form-group">
+  <label class="form-label" for="select-disabled">Department</label>
+  <select class="form-select" id="select-disabled" name="department" disabled>
+    <option value="eng" selected>Engineering</option>
+  </select>
+</div>
+
+<!-- ====================================================================
+     Textarea — Default
+     ==================================================================== -->
+<div class="form-group">
+  <label class="form-label" for="textarea-bio">Bio</label>
+  <textarea
+    class="form-textarea"
+    id="textarea-bio"
+    name="bio"
+    placeholder="Tell us about yourself..."
+    aria-describedby="textarea-bio-helper"
+  ></textarea>
+  <span class="form-helper" id="textarea-bio-helper">
+    Maximum 500 characters.
+  </span>
+</div>
+
+<!-- ====================================================================
+     Textarea — Required + Error
+     ==================================================================== -->
+<div class="form-group">
+  <label class="form-label form-label--required" for="textarea-feedback">
+    Feedback
+  </label>
+  <textarea
+    class="form-textarea form-textarea--error"
+    id="textarea-feedback"
+    name="feedback"
+    required
+    aria-required="true"
+    aria-invalid="true"
+    aria-describedby="textarea-feedback-error"
+  ></textarea>
+  <span class="form-error" id="textarea-feedback-error" role="alert">
+    Feedback is required.
+  </span>
+</div>
+
+<!-- ====================================================================
+     Textarea — Disabled
+     ==================================================================== -->
+<div class="form-group">
+  <label class="form-label" for="textarea-disabled">Notes</label>
+  <textarea
+    class="form-textarea"
+    id="textarea-disabled"
+    name="notes"
+    disabled
+  >This field is read-only.</textarea>
+</div>

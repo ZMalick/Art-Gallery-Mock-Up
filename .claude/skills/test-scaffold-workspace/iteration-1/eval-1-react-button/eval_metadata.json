@@ -1,0 +1,5 @@
+{
+  "eval_id": 1,
+  "eval_name": "eval-1-react-button",
+  "prompt": "Write tests for this React component using Vitest and Testing Library:\n\n```tsx\ninterface ButtonProps {\n  variant?: 'primary' | 'secondary' | 'danger';\n  size?: 'sm' | 'md' | 'lg';\n  disabled?: boolean;\n  loading?: boolean;\n  onClick?: () => void;\n  children: React.ReactNode;\n}\n\nexport const Button = ({ variant = 'primary', size = 'md', disabled, loading, onClick, children }: ButtonProps) => (\n  <button\n    className={`btn btn-${variant} btn-${size}`}\n    disabled={disabled || loading}\n    onClick={onClick}\n    aria-busy={loading}\n  >\n    {loading ? <span className=\"spinner\" /> : children}\n  </button>\n);\n```"
+}

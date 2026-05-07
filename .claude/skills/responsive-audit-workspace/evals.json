@@ -1,0 +1,15 @@
+{
+  "skill_name": "responsive-audit",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Audit this page for responsive issues and fix them:\n\n```html\n<div style=\"width: 960px; margin: 0 auto;\">\n  <nav style=\"display: flex; gap: 20px;\">\n    <a href=\"/\">Home</a><a href=\"/about\">About</a><a href=\"/contact\">Contact</a>\n  </nav>\n  <div style=\"display: flex; gap: 30px;\">\n    <main style=\"width: 640px;\">\n      <h1 style=\"font-size: 42px;\">Welcome</h1>\n      <p style=\"font-size: 14px; line-height: 1.2;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\n      <img src=\"hero.jpg\" style=\"width: 640px;\">\n      <button style=\"padding: 5px 8px; font-size: 11px;\">Click me</button>\n    </main>\n    <aside style=\"width: 280px;\">Sidebar content</aside>\n  </div>\n</div>\n```",
+      "expected_output": "Audit report identifying fixed widths, small touch targets, non-fluid images, small font sizes, and missing breakpoints, with fixed code"
+    },
+    {
+      "id": 2,
+      "prompt": "My React component looks terrible on mobile. Can you audit it?\n\n```tsx\nconst Dashboard = () => (\n  <div style={{ display: 'grid', gridTemplateColumns: '250px 1fr 300px', height: '100vh' }}>\n    <nav style={{ padding: '20px', background: '#1a1a2e' }}>\n      <ul>{['Dashboard','Analytics','Users','Settings'].map(i => <li key={i} style={{padding:'4px 0'}}><a href='#' style={{fontSize:'13px',color:'#aaa'}}>{i}</a></li>)}</ul>\n    </nav>\n    <main style={{ padding: '40px', overflow: 'auto' }}>\n      <div style={{ display: 'flex', gap: '20px' }}>\n        {[1,2,3,4].map(i => <div key={i} style={{width:'250px',height:'150px',background:'#f0f0f0',borderRadius:'8px'}} />)}\n      </div>\n      <table style={{width:'100%',marginTop:'20px'}}><thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Status</th><th>Actions</th></tr></thead></table>\n    </main>\n    <aside style={{ padding: '20px', background: '#f5f5f5' }}>Activity Feed</aside>\n  </div>\n)\n```",
+      "expected_output": "Audit identifying 3-column grid issues on mobile, non-wrapping flex cards, small nav links, table overflow, with responsive fixes"
+    }
+  ]
+}

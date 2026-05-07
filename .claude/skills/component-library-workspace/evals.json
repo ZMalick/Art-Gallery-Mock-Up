@@ -1,0 +1,15 @@
+{
+  "skill_name": "component-library",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I need a React component library with TypeScript. Start with Button, Modal, and Card components. Use CSS Modules for styling. I want a dark/light theme system with design tokens.",
+      "expected_output": "React components with TypeScript, CSS Modules, design tokens, accessibility, and theme support"
+    },
+    {
+      "id": 2,
+      "prompt": "Create a plain HTML/CSS component library with a Button, Form (input, select, textarea), and Card. Use CSS custom properties for theming. Make sure everything is accessible.",
+      "expected_output": "HTML/CSS components with BEM naming, CSS custom properties, ARIA attributes, keyboard navigation"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+<!--
+  Card Component
+  ===============
+  Variants: elevated | outlined | flat
+  Slots: header (title + subtitle), body, footer, media (optional image)
+
+  Accessibility:
+  - Uses semantic heading hierarchy (h2/h3 for title)
+  - Interactive cards use role="article" so screen readers announce them
+  - Clickable cards wrapped in <a> retain full keyboard access
+  - Focus ring via :focus-visible
+-->
+
+<!-- ====================================================================
+     Elevated Card (default)
+     ==================================================================== -->
+<article class="card card--elevated" role="article">
+  <div class="card__header">
+    <h2 class="card__header-title">Elevated Card</h2>
+    <p class="card__header-subtitle">With a subtle drop shadow</p>
+  </div>
+  <div class="card__body">
+    <p>
+      This is the default card style. It features a medium box-shadow that
+      intensifies on hover to provide depth and visual feedback.
+    </p>
+  </div>
+  <div class="card__footer">
+    <button class="btn btn--primary btn--sm" type="button">Action</button>
+    <button class="btn btn--ghost btn--sm" type="button">Cancel</button>
+  </div>
+</article>
+
+<!-- ====================================================================
+     Outlined Card
+     ==================================================================== -->
+<article class="card card--outlined" role="article">
+  <div class="card__header">
+    <h2 class="card__header-title">Outlined Card</h2>
+    <p class="card__header-subtitle">Bordered, no shadow</p>
+  </div>
+  <div class="card__body">
+    <p>
+      A lightweight card with a visible border. Ideal for dashboard widgets
+      and list items where heavy shadows would be distracting.
+    </p>
+  </div>
+  <div class="card__footer">
+    <button class="btn btn--outline btn--sm" type="button">Learn More</button>
+  </div>
+</article>
+
+<!-- ====================================================================
+     Flat Card
+     ==================================================================== -->
+<article class="card card--flat" role="article">
+  <div class="card__header">
+    <h2 class="card__header-title">Flat Card</h2>
+  </div>
+  <div class="card__body">
+    <p>
+      A minimal card with no border or shadow — just a subtle background
+      tint. Great for information sections or inline content blocks.
+    </p>
+  </div>
+</article>
+
+<!-- ====================================================================
+     Card with Media (Image)
+     ==================================================================== -->
+<article class="card card--elevated" role="article">
+  <img
+    class="card__media"
+    src="https://via.placeholder.com/600x300"
+    alt="Placeholder landscape image"
+    height="300"
+    width="600"
+  />
+  <div class="card__header">
+    <h2 class="card__header-title">Card with Image</h2>
+    <p class="card__header-subtitle">A media slot at the top</p>
+  </div>
+  <div class="card__body">
+    <p>Cards can include a top-level image via the <code>.card__media</code> slot.</p>
+  </div>
+</article>
+
+<!-- ====================================================================
+     Interactive (Clickable) Card
+     ==================================================================== -->
+<a href="#" class="card card--elevated" role="article" aria-label="Read more about the interactive card example">
+  <div class="card__header">
+    <h2 class="card__header-title">Interactive Card</h2>
+    <p class="card__header-subtitle">Entire card is clickable</p>
+  </div>
+  <div class="card__body">
+    <p>
+      Wrapping the card in an <code>&lt;a&gt;</code> tag makes the whole
+      surface clickable while keeping it keyboard-accessible.
+    </p>
+  </div>
+</a>

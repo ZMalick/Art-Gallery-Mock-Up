@@ -1,0 +1,5 @@
+{
+  "eval_id": 2,
+  "eval_name": "nextjs-dashboard",
+  "prompt": "My Next.js page loads slowly. Here's the component:\n\n```tsx\nimport axios from 'axios';\nimport { Chart } from 'chart.js/auto';\n\nexport default function Dashboard() {\n  const [data, setData] = useState(null);\n  useEffect(() => {\n    axios.get('/api/analytics').then(res => setData(res.data));\n    axios.get('/api/users').then(res => setUsers(res.data));\n    axios.get('/api/revenue').then(res => setRevenue(res.data));\n  }, []);\n\n  return (\n    <div>\n      <img src=\"/banner.png\" />\n      <img src=\"/team-photo.jpg\" />\n      {data && <canvas ref={chartRef} />}\n      {/* renders 500 table rows */}\n      <table>{users?.map(u => <tr key={u.id}><td>{u.name}</td><td>{u.email}</td></tr>)}</table>\n    </div>\n  );\n}\n```"
+}
