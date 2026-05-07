@@ -10,14 +10,15 @@ Two audiences:
 - **Customers** — browse artwork, learn about artists, discover the gallery
 - **Artists** — learn about consignment, apply to show work
 
-**NO sales, NO e-commerce, NO shopping carts, NO prices** — purely informational. An artwork cannot exist without an artist.
+**No transactions on the site** — no carts, no checkout, no "buy" buttons. Informational only. An artwork cannot exist without an artist. Prices CAN appear as informational labels on contemporary (consignment) work — Kay approved 2026-05-06. Permanent Collection pieces never show prices.
 
 Design inspiration: **Uprise Art** — clean, editorial, gallery aesthetic. Professional, not AI-generated.
 
 ## Always Do First
 1. Check `images/` for the logo (`KaysOrigLogo.png`) and any new assets before designing.
 2. Check `Extra Notes/` for class notes and background docs that may affect requirements.
-3. **Read `docs/lessons-learned.md`** before starting any complex or multi-file task — it contains known patterns and resolved gotchas. Add a new entry when you discover something non-obvious or the user corrects a mistake.
+3. **Read `docs/lessons-learned.md`** before starting any complex or multi-file task — known patterns and resolved gotchas. Add a new entry when you discover something non-obvious or the user corrects a mistake.
+4. **Read `docs/known-issues.md`** before fixing visible bugs — outstanding bugs are already triaged with severity + suggested fixes.
 
 ## Tech Stack
 - **HTML/CSS/JS only** — vanilla, no frameworks, no build tools, no package.json
@@ -31,7 +32,13 @@ Design inspiration: **Uprise Art** — clean, editorial, gallery aesthetic. Prof
 - Pages in `pages/` link to each other as `X.html` (same directory)
 - Pages in `pages/` link to homepage as `../index.html`
 - Pages in `pages/` reference assets with `../` prefix (`../css/`, `../js/`, `../images/`)
-- `window.PAGE_BASE` variable handles dynamic JS link generation (set per page)
+- `window.PAGE_BASE` and `window.IMAGE_BASE` handle dynamic JS link/image generation (set per page; see `docs/lessons-learned.md`)
+
+## URL Routing for Detail Pages
+- Artist detail: `pages/artist.html?id=<lastname>` — e.g., `?id=torres`, `?id=monet`, `?id=rodin`
+- Artwork detail: `pages/artwork.html?id=<slug>` — e.g., `?id=desert-bloom`
+- Exhibition detail: `pages/exhibition.html?id=<slug>` — e.g., `?id=spring-showcase-2026`
+- IDs are defined in `js/data.js`
 
 ## Brand Guidelines
 - **Colors:** All CSS custom properties are defined in `css/styles.css :root`. **Do not invent colors** — use only those variables. No brown, no beige.
@@ -48,8 +55,10 @@ Design inspiration: **Uprise Art** — clean, editorial, gallery aesthetic. Prof
 ## Navigation
 Sticky dark nav, always visible:
 - Logo + slogan on left
-- Links: Gallery | Artists | Consignment | About | Contact
+- Links: **Artwork | Artists | Exhibitions | About | For Artists | Contact**
+- "Artwork" is a dropdown (filter shortcuts: All / Paintings / Sculptures / Sketches)
 - Hamburger menu on mobile (< 1024px)
+- Note: `pages/artist-login.html` currently has a different/legacy nav — flagged in `docs/known-issues.md` for alignment.
 
 ## Design Rules
 - Editorial gallery aesthetic (Uprise Art)
@@ -73,7 +82,7 @@ Sticky dark nav, always visible:
 - Large QA passes (10+ items): group into 5-10 batches, implement one at a time, wait for explicit user approval before moving on
 
 ## Hard Rules
-1. **No sales functionality** — no prices, no carts, no checkout, no "buy" buttons
+1. **No transactions on the site** — no carts, no checkout, no "buy" buttons. Prices on contemporary work are allowed as informational labels (Kay approved 2026-05-06). Permanent Collection pieces never show prices.
 2. **Informational only** — browsing art and learning about artists
 3. **No frameworks** — no React, Vue, Tailwind, Bootstrap, or npm packages
 4. **Do not invent brand colors** — use only the palette in `css/styles.css`
