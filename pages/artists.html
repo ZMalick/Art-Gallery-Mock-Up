@@ -1,4 +1,14 @@
 <!DOCTYPE html>
+<!--
+  ============================================================
+  pages/artists.html — Browse all artists
+  ------------------------------------------------------------
+  Listing of every artist in the gallery. The grid (#allArtistsGrid)
+  is empty in the HTML — main.js fills it from KaysData.artists.
+  Optional pill row at the top filters by media (Painting / Sculpture /
+  Sketching). Clicking a card goes to artist.html?id=<slug>.
+  ============================================================
+-->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -33,6 +43,7 @@
         <li class="has-dropdown">
           <a href="gallery.html" class="dropdown-toggle nav-link" aria-haspopup="true" aria-expanded="false">Artwork</a>
           <ul class="dropdown" role="menu">
+            <li><a href="gallery.html" class="nav-link">All Artwork</a></li>
             <li><a href="gallery.html?category=painting" class="nav-link">Paintings</a></li>
             <li><a href="gallery.html?category=sculpture" class="nav-link">Sculptures</a></li>
             <li><a href="gallery.html?category=sketch" class="nav-link">Sketches</a></li>
@@ -82,6 +93,24 @@
         <img src="../images/KaysOrigLogo.png" alt="Kay's Originals" class="footer-logo">
         <p class="footer-slogan">Discover Original Art</p>
         <p class="footer-tagline">A curated gallery celebrating bold, original artwork from visionary artists.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="gallery.html?category=painting">Paintings</a></li>
+          <li><a href="gallery.html?category=sculpture">Sculptures</a></li>
+          <li><a href="gallery.html?category=sketch">Sketches</a></li>
+          <li><a href="gallery.html">All Artwork</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="consignment.html">For Artists</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
       </div>
       <div class="footer-contact">
         <h4>Get in Touch</h4>

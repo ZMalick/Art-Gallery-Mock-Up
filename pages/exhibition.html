@@ -1,4 +1,14 @@
 <!DOCTYPE html>
+<!--
+  ============================================================
+  pages/exhibition.html — Single exhibition detail (dynamic)
+  ------------------------------------------------------------
+  Shown via URL like exhibition.html?id=spring-showcase-2026.
+  main.js reads the id, looks up the show in KaysData, and renders
+  the hero (title, dates, description, disclaimer), the artwork
+  grid, and the artist grid for the show.
+  ============================================================
+-->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -24,7 +34,7 @@
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
         <img src="../images/KaysOrigLogo.png" alt="Kay's Originals" class="nav-logo">
-        <span class="nav-slogan">Exhibition Detail</span>
+        <span class="nav-slogan">Now Showing</span>
       </a>
       <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -33,6 +43,7 @@
         <li class="has-dropdown">
           <a href="gallery.html" class="dropdown-toggle nav-link" aria-haspopup="true" aria-expanded="false">Artwork</a>
           <ul class="dropdown" role="menu">
+            <li><a href="gallery.html" class="nav-link">All Artwork</a></li>
             <li><a href="gallery.html?category=painting" class="nav-link">Paintings</a></li>
             <li><a href="gallery.html?category=sculpture" class="nav-link">Sculptures</a></li>
             <li><a href="gallery.html?category=sketch" class="nav-link">Sketches</a></li>
@@ -66,7 +77,7 @@
   <!-- ===== EXHIBITION ARTWORK ===== -->
   <section class="page-content" id="exhibitionArtwork" style="display:none;">
     <div class="section-inner">
-      <h2 class="section-heading" style="font-size:1.6rem;margin-bottom:1.5rem;">Featured Artwork</h2>
+      <h2 class="section-heading subsection-heading">Featured Artwork</h2>
       <div id="exhibitionArtGrid" class="artwork-grid"></div>
     </div>
   </section>
@@ -74,13 +85,13 @@
   <!-- ===== EXHIBITION ARTISTS ===== -->
   <section class="page-content" id="exhibitionArtists" style="display:none;">
     <div class="section-inner">
-      <h2 class="section-heading" style="font-size:1.6rem;margin-bottom:1.5rem;">Participating Artists</h2>
+      <h2 class="section-heading subsection-heading">Participating Artists</h2>
       <div id="exhibitionArtistGrid" class="artist-grid"></div>
     </div>
   </section>
 
   <section class="page-content">
-    <div class="section-inner" style="text-align:center; padding-top: 0;">
+    <div class="section-inner back-link-row">
       <a href="exhibitions.html" class="btn btn-secondary">Back to All Exhibitions</a>
     </div>
   </section>

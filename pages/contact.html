@@ -1,4 +1,15 @@
 <!DOCTYPE html>
+<!--
+  ============================================================
+  pages/contact.html — Contact us
+  ------------------------------------------------------------
+  Two contact forms tabbed side-by-side: one for general visitors
+  (Customer) and one for artists (Artist). Both submit through
+  EmailJS (a free service that lets a static site send email)
+  using the credentials hardcoded in main.js. Gallery hours,
+  address, and social links sit alongside the forms.
+  ============================================================
+-->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -33,6 +44,7 @@
         <li class="has-dropdown">
           <a href="gallery.html" class="dropdown-toggle nav-link" aria-haspopup="true" aria-expanded="false">Artwork</a>
           <ul class="dropdown" role="menu">
+            <li><a href="gallery.html" class="nav-link">All Artwork</a></li>
             <li><a href="gallery.html?category=painting" class="nav-link">Paintings</a></li>
             <li><a href="gallery.html?category=sculpture" class="nav-link">Sculptures</a></li>
             <li><a href="gallery.html?category=sketch" class="nav-link">Sketches</a></li>
@@ -91,10 +103,10 @@
               <textarea id="customerMessage" name="message" rows="4" required placeholder="How can we help?"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Send Message</button>
-            <div class="form-success" style="display:none;">
+            <div class="form-success" role="status" aria-live="polite" style="display:none;">
               <p>Thank you! Your message has been sent. We'll be in touch soon.</p>
             </div>
-            <div class="form-error" style="display:none;">
+            <div class="form-error" role="alert" aria-live="assertive" style="display:none;">
               <p>Sorry — something went wrong sending your message. Please try again or email us directly.</p>
             </div>
           </form>
@@ -133,10 +145,10 @@
               <textarea id="artistMessage" name="message" rows="4" required placeholder="Tell us about your work and what you're looking for."></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit Inquiry</button>
-            <div class="form-success" style="display:none;">
+            <div class="form-success" role="status" aria-live="polite" style="display:none;">
               <p>Thank you! We'll review your inquiry and be in touch soon.</p>
             </div>
-            <div class="form-error" style="display:none;">
+            <div class="form-error" role="alert" aria-live="assertive" style="display:none;">
               <p>Sorry — something went wrong sending your inquiry. Please try again or email us directly.</p>
             </div>
           </form>
@@ -180,6 +192,24 @@
         <p class="footer-slogan">Discover Original Art</p>
         <p class="footer-tagline">A curated gallery celebrating bold, original artwork from visionary artists.</p>
       </div>
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="gallery.html?category=painting">Paintings</a></li>
+          <li><a href="gallery.html?category=sculpture">Sculptures</a></li>
+          <li><a href="gallery.html?category=sketch">Sketches</a></li>
+          <li><a href="gallery.html">All Artwork</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="consignment.html">For Artists</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
       <div class="footer-contact">
         <h4>Get in Touch</h4>
         <p><strong>Email</strong><br><a href="mailto:info@kaysoriginals.com">info@kaysoriginals.com</a></p>
@@ -193,6 +223,7 @@
   </footer>
 
   <script>window.PAGE_BASE = '';</script>
+  <script>window.IMAGE_BASE = '../';</script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
     emailjs.init({ publicKey: 'Qb8SA6Hjmj0s-rPZK' });
