@@ -17,10 +17,7 @@ cp "$SRC/pages/"*.html            "$DEST/pages/"
 cp "$SRC/css/styles.css"          "$DEST/css/styles.css"
 cp "$SRC/js/data.js"              "$DEST/js/data.js"
 cp "$SRC/js/main.js"              "$DEST/js/main.js"
-cp "$SRC/images/KaysOrigLogo.png" "$DEST/images/KaysOrigLogo.png"
-cp "$SRC/images/favicon.png"      "$DEST/images/favicon.png"
-cp "$SRC/images/reclaimed-tower.jpg" "$DEST/images/reclaimed-tower.jpg"
-cp "$SRC/images/gallery-front.jpg"  "$DEST/images/gallery-front.jpg"
+cp -r "$SRC/images/." "$DEST/images/"
 cp "$SRC/Open Website.bat"          "$DEST/Open Website.bat"
 
 # Commit and push if there are changes
